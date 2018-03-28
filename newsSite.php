@@ -43,10 +43,12 @@
                 $xmlDoc = new DOMDocument();
                 $docPageList = array("http://feeds.bbci.co.uk/news/world/rss.xml",
                                     "http://www.espn.com/espn/rss/news" );
+                $names = array("World News", "Sports");
                 for ($j=0; $j < sizeof($docPageList); $j++){
+                    echo("<h3>" . $names[$j] . "<h3>");
                     $xmlDoc->load($docPageList[$j]);
                     $x=$xmlDoc->getElementsByTagName('item');
-                    for ($i=0; $i<=2; $i++) {
+                    for ($i=0; $i<=10; $i++) {
                         $item_title=$x->item($i)->getElementsByTagName('title')
                         ->item(0)->childNodes->item(0)->nodeValue;
                         $item_link=$x->item($i)->getElementsByTagName('link')
