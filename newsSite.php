@@ -30,40 +30,15 @@
         <div><h3>News:</h3></div>
         <form>
             <select onchange="showRSS(this.value)">
-            <option value="">All</option>
-            <option value="Sports">Top Headlines</option>
-            <option value="World">NFL News</option>
-            <option value="NBA">NBA News</option>
-            <option value="MLB">MLB News</option>
-            <option value="NHL">NHL News</option>
+            <option value="All">All</option>
+            <option value="World News">World News</option>
+            <option value="US News">US News</option>
+            <option value="Sports News">Sports News</option>
             </select>
         </form>
+        <script>showRSS("All")</script>
         <div id="rssOutput">
-            <?php
-                $xmlDoc = new DOMDocument();
-                $docPageList = array("http://feeds.bbci.co.uk/news/world/rss.xml",
-                                    "http://www.cnbc.com/id/15837362/device/rss/rss.html",
-                                    "http://www.espn.com/espn/rss/news" );
-                $names = array("World News", "US News", "Sports");
-                for ($j=0; $j < sizeof($docPageList); $j++){
-                    echo("<h3><b>" . $names[$j] . "</b></h3>");
-                    $xmlDoc->load($docPageList[$j]);
-                    $x=$xmlDoc->getElementsByTagName('item');
-                    for ($i=0; $i<=10; $i++) {
-                        $item_title=$x->item($i)->getElementsByTagName('title')
-                        ->item(0)->childNodes->item(0)->nodeValue;
-                        $item_link=$x->item($i)->getElementsByTagName('link')
-                        ->item(0)->childNodes->item(0)->nodeValue;
-                        $item_desc=$x->item($i)->getElementsByTagName('description')
-                        ->item(0)->childNodes->item(0)->nodeValue;
-                        echo ("<p><a href='" . $item_link
-                        . "'>" . $item_title . "</a>");
-                        echo ("<br>");
-                        echo ($item_desc . "</p>");
-                    }
-                }
-
-            ?>
+            ...Loading
         </div>
     </body>
 </html>

@@ -2,51 +2,31 @@
 //get the q parameter from URL
 $q=$_GET["q"];
 
-//find out which feed was selected
-if($q=="Top") {
-  $xml=("http://www.espn.com/espn/rss/news");
-} elseif($q=="NFL") {
-  $xml=("http://www.espn.com/espn/rss/nfl/news");
-} elseif($q=="NBA") {
-    $xml=("http://www.espn.com/espn/rss/nba/news");
-}
-elseif($q=="MLB") {
-    $xml=("http://www.espn.com/espn/rss/mlb/news");
-}
-elseif($q=="NHL") {
-    $xml=("http://www.espn.com/espn/rss/nhl/news");
-}
-
 $xmlDoc = new DOMDocument();
-$xmlDoc->load($xml);
+$docPageList = array("World News" => "http://feeds.bbci.co.uk/news/world/rss.xml",
+                    "US News" => "http://www.cnbc.com/id/15837362/device/rss/rss.html",
+                    "Sports News" => "http://www.espn.com/espn/rss/news" );
 
-// //get elements from "<channel>"
-// $channel=$xmlDoc->getElementsByTagName('channel')->item(0);
-// $channel_title = $channel->getElementsByTagName('title')
-// ->item(0)->childNodes->item(0)->nodeValue;
-// $channel_link = $channel->getElementsByTagName('link')
-// ->item(0)->childNodes->item(0)->nodeValue;
-// $channel_desc = $channel->getElementsByTagName('description')
-// ->item(0)->childNodes->item(0)->nodeValue;
-
-// //output elements from "<channel>"
-// echo("<p><a href='" . $channel_link
-//   . "'>" . $channel_title . "</a>");
-// echo("<br>");
-// echo($channel_desc . "</p>");
-
-//get and output "<item>" elements
-$x=$xmlDoc->getElementsByTagName('item');
-for ($i=0; $i<=2; $i++) {
-  $item_title=$x->item($i)->getElementsByTagName('title')
-  ->item(0)->childNodes->item(0)->nodeValue;
-  $item_link=$x->item($i)->getElementsByTagName('link')
-  ->item(0)->childNodes->item(0)->nodeValue;
-  $item_desc=$x->item($i)->getElementsByTagName('description')
-  ->item(0)->childNodes->item(0)->nodeValue;
-  echo ("<p><a href='" . $item_link
-  . "'>" . $item_title . "</a>");
-  echo ("<br>");
-  echo ($item_desc . "</p>");
+if ($q != "All"){
+    $docPageList = array($q => $docPageList[$q]);
 }
+
+for ($j=0; $j < sizeof($docPageList); $j++){
+    echo("<h3><b>" . array_search($docPageList[$j], $docPageList) . "</b></h3>");
+    $xmlDoc->load($docPageList[$j]);
+    $x=$xmlDoc->getElementsByTagName('item');
+    for ($i=0; $i<=10; $i++) {
+        $item_title=$x->item($i)->getElementsByTagName('title')
+        ->item(0)->childNodes->item(0)->nodeValue;
+        $item_link=$x->item($i)->getElementsByTagName('link')
+        ->item(0)->childNodes->item(0)->nodeValue;
+        $item_desc=$x->item($i)->getElementsByTagName('description')
+        ->item(0)->childNodes->item(0)->nodeValue;
+        echo ("<p><a href='" . $item_link
+        . "'>" . $item_title . "</a>");
+        echo ("<br>");
+        echo ($item_desc . "</p>");
+    }
+}
+
 ?>
