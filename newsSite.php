@@ -30,7 +30,7 @@
         <div><h3>News:</h3></div>
         <form>
             <select onchange="showRSS(this.value)">
-            <option value="">Select an RSS-feed:</option>
+            <option value="">All</option>
             <option value="Top">Top Headlines</option>
             <option value="NFL">NFL News</option>
             <option value="NBA">NBA News</option>
@@ -38,6 +38,26 @@
             <option value="NHL">NHL News</option>
             </select>
         </form>
-        <div id="rssOutput">Loading...</div>
+        <div id="rssOutput">
+            <?php
+                $xmlDoc = new DOMDocument();
+                $xmlDoc->load("http://feeds.bbci.co.uk/news/world/rss.xml");
+
+                $x=$xmlDoc->getElementsByTagName('item');
+                for ($i=0; $i<=2; $i++) {
+                $item_title=$x->item($i)->getElementsByTagName('title')
+                ->item(0)->childNodes->item(0)->nodeValue;
+                $item_link=$x->item($i)->getElementsByTagName('link')
+                ->item(0)->childNodes->item(0)->nodeValue;
+                $item_desc=$x->item($i)->getElementsByTagName('description')
+                ->item(0)->childNodes->item(0)->nodeValue;
+                echo ("<p><a href='" . $item_link
+                . "'>" . $item_title . "</a>");
+                echo ("<br>");
+                echo ($item_desc . "</p>");
+                }
+
+            ?>
+        </div>
     </body>
 </html>
