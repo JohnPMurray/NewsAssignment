@@ -38,5 +38,6 @@
             <option value="NHL">NHL News</option>
             </select>
         </form>
+        <div id="rssOutput">Loading...</div>
     </body>
 </html>
