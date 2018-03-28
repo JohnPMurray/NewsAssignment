@@ -3,10 +3,18 @@
 $q=$_GET["q"];
 
 //find out which feed was selected
-if($q=="Espn") {
+if($q=="Top") {
   $xml=("http://www.espn.com/espn/rss/news");
-} elseif($q=="NBC") {
-  $xml=("http://www.espn.com/espn/rss/news");
+} elseif($q=="NFL") {
+  $xml=("http://www.espn.com/espn/rss/nfl/news");
+} elseif($q=="NBA") {
+    $xml=("http://www.espn.com/espn/rss/nba/news");
+}
+elseif($q=="MLB") {
+    $xml=("http://www.espn.com/espn/rss/mlb/news");
+}
+elseif($q=="NHL") {
+    $xml=("http://www.espn.com/espn/rss/nhl/news");
 }
 
 $xmlDoc = new DOMDocument();

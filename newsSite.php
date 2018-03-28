@@ -28,9 +28,15 @@
     </head>
     <body>
         <div><h3>News:</h3></div>
-        <button onclick="showRSS('Espn')">feed Me</button>
-        <div>
-        <div id="rssOutput">Loading...</div>
-        </div>
+        <form>
+            <select onchange="showRSS(this.value)">
+            <option value="">Select an RSS-feed:</option>
+            <option value="Top">Top Headlines</option>
+            <option value="NFL">NFL News</option>
+            <option value="NBA">NBA News</option>
+            <option value="MLB">MLB News</option>
+            <option value="NHL">NHL News</option>
+            </select>
+        </form>
     </body>
 </html>
