@@ -42,7 +42,7 @@
             <?php
                 $xmlDoc = new DOMDocument();
                 $docPageList = array("http://feeds.bbci.co.uk/news/world/rss.xml",
-                                    "http://www.espn.com/espn/rss/news" )
+                                    "http://www.espn.com/espn/rss/news" );
                 for ($j=0; $j < sizeof($docPageList); $j++){
                     $xmlDoc->load($docPageList[$j]);
                     $x=$xmlDoc->getElementsByTagName('item');
