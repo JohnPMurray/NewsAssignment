@@ -42,8 +42,9 @@
             <?php
                 $xmlDoc = new DOMDocument();
                 $docPageList = array("http://feeds.bbci.co.uk/news/world/rss.xml",
+                                    "http://rss.cnn.com/rss/cnn_topstories.rss",
                                     "http://www.espn.com/espn/rss/news" );
-                $names = array("World News", "Sports");
+                $names = array("World News", "US News", "Sports");
                 for ($j=0; $j < sizeof($docPageList); $j++){
                     echo("<h3><b>" . $names[$j] . "<b></h3>");
                     $xmlDoc->load($docPageList[$j]);
