@@ -42,7 +42,7 @@
             <?php
                 $xmlDoc = new DOMDocument();
                 $docPageList = array("http://feeds.bbci.co.uk/news/world/rss.xml",
-                                    "feed://feeds.nbcnews.com/feeds/usnews",
+                                    "http://www.cnbc.com/id/15837362/device/rss/rss.html",
                                     "http://www.espn.com/espn/rss/news" );
                 $names = array("World News", "US News", "Sports");
                 for ($j=0; $j < sizeof($docPageList); $j++){
