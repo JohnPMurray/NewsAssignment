@@ -31,8 +31,8 @@
         <form>
             <select onchange="showRSS(this.value)">
             <option value="">All</option>
-            <option value="Top">Top Headlines</option>
-            <option value="NFL">NFL News</option>
+            <option value="Sports">Top Headlines</option>
+            <option value="World">NFL News</option>
             <option value="NBA">NBA News</option>
             <option value="MLB">MLB News</option>
             <option value="NHL">NHL News</option>
@@ -41,20 +41,23 @@
         <div id="rssOutput">
             <?php
                 $xmlDoc = new DOMDocument();
-                $xmlDoc->load("http://feeds.bbci.co.uk/news/world/rss.xml");
-
-                $x=$xmlDoc->getElementsByTagName('item');
-                for ($i=0; $i<=2; $i++) {
-                $item_title=$x->item($i)->getElementsByTagName('title')
-                ->item(0)->childNodes->item(0)->nodeValue;
-                $item_link=$x->item($i)->getElementsByTagName('link')
-                ->item(0)->childNodes->item(0)->nodeValue;
-                $item_desc=$x->item($i)->getElementsByTagName('description')
-                ->item(0)->childNodes->item(0)->nodeValue;
-                echo ("<p><a href='" . $item_link
-                . "'>" . $item_title . "</a>");
-                echo ("<br>");
-                echo ($item_desc . "</p>");
+                $docPageList = array("http://feeds.bbci.co.uk/news/world/rss.xml",
+                                    "http://www.espn.com/espn/rss/news" )
+                for ($j=0; $j < sizeof($docPageList); $j++){
+                    $xmlDoc->load($docPageList[$j]);
+                    $x=$xmlDoc->getElementsByTagName('item');
+                    for ($i=0; $i<=2; $i++) {
+                        $item_title=$x->item($i)->getElementsByTagName('title')
+                        ->item(0)->childNodes->item(0)->nodeValue;
+                        $item_link=$x->item($i)->getElementsByTagName('link')
+                        ->item(0)->childNodes->item(0)->nodeValue;
+                        $item_desc=$x->item($i)->getElementsByTagName('description')
+                        ->item(0)->childNodes->item(0)->nodeValue;
+                        echo ("<p><a href='" . $item_link
+                        . "'>" . $item_title . "</a>");
+                        echo ("<br>");
+                        echo ($item_desc . "</p>");
+                    }
                 }
 
             ?>
