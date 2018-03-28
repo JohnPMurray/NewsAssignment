@@ -3,10 +3,10 @@
 $q=$_GET["q"];
 
 //find out which feed was selected
-if($q=="Google") {
-  $xml=("http://news.google.com/news?ned=us&topic=h&output=rss");
+if($q=="Espn") {
+  $xml=("http://www.espn.com/espn/rss/news");
 } elseif($q=="NBC") {
-  $xml=("http://rss.msnbc.msn.com/id/3032091/device/rss/rss.xml");
+  $xml=("http://www.espn.com/espn/rss/news");
 }
 
 $xmlDoc = new DOMDocument();

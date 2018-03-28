@@ -28,7 +28,7 @@
     </head>
     <body>
         <div><h3>News:</h3></div>
-        <button onclick="showRSS('http://www.espn.com/espn/rss/news')">feed Me</button>
+        <button onclick="showRSS('Espn')">feed Me</button>
         <div>
         <div id="rssOutput">Loading...</div>
         </div>
