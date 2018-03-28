@@ -1,39 +1,36 @@
 <html>
-    <header>
+    <head>
         
-        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-        <script src="http://www.google.com/uds/solutions/dynamicfeed/gfdynamicfeedcontrol.js"
-        type="text/javascript"></script>
-
-        <style type="text/css">
-        @import url("http://www.google.com/uds/solutions/dynamicfeed/gfdynamicfeedcontrol.css");
-
-        #feedControl {
-        margin-top : 10px;
-        margin-left: auto;
-        margin-right: auto;
-        width : 440px;
-        font-size: 12px;
-        color: #9CADD0;
-        }
-        </style>
-        <script type="text/javascript">
-        function load() {
-        var feed ="http://www.espn.com/espn/rss/news";
-        new GFdynamicFeedControl(feed, "feedControl");
-
-        }
-        google.load("feeds", "1");
-        google.setOnLoadCallback(load);
+        <script>
+            function showRSS(str) {
+            if (str.length==0) { 
+                document.getElementById("rssOutput").innerHTML="";
+                return;
+            }
+            if (window.XMLHttpRequest) {
+                // code for IE7+, Firefox, Chrome, Opera, Safari
+                xmlhttp=new XMLHttpRequest();
+            } else {  // code for IE6, IE5
+                xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            xmlhttp.onreadystatechange=function() {
+                if (this.readyState==4 && this.status==200) {
+                document.getElementById("rssOutput").innerHTML=this.responseText;
+                }
+            }
+            xmlhttp.open("GET","getrss.php?q="+str,true);
+            xmlhttp.send();
+            }
         </script>
         <Title> News World </Title>
         <h1> News World </h1>
         <h2><i>Printing the news since 2018.</i><h2>
-    </header>
+    </head>
     <body>
         <div><h3>News:</h3></div>
+        <button onclick="showRSS('http://www.espn.com/espn/rss/news')">feed Me</button>
         <div>
-        <div id="feedControl">Loading...</div>
+        <div id="rssOutput">Loading...</div>
         </div>
     </body>
 </html>
