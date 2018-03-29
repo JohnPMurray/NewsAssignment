@@ -3,9 +3,9 @@
 $q=$_GET["q"];
 
 $xmlDoc = new DOMDocument();
-$docPageList = array("World News" => "http://feeds.bbci.co.uk/news/world/rss.xml",
-                    "US News" => "http://www.cnbc.com/id/15837362/device/rss/rss.html",
-                    "Sports News" => "http://www.espn.com/espn/rss/news" );
+$docPageList = array("Top" => "http://www.espn.com/espn/rss/news",
+                    "MLB" => "http://www.espn.com/espn/rss/mlb/news",
+                    "NFL" => "http://www.espn.com/espn/rss/nfl/news" );
 
 if ($q != "All"){
     $docPageList = array($q => $docPageList[$q]);

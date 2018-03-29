@@ -31,9 +31,9 @@
         <form>
             <select onchange="showRSS(this.value)">
             <option value="All">All</option>
-            <option value="World News">World News</option>
-            <option value="US News">US News</option>
-            <option value="Sports News">Sports News</option>
+            <option value="Top">Top</option>
+            <option value="MLB">MLB</option>
+            <option value="NFL">NFL</option>
             </select>
         </form>
         <script>showRSS("All")</script>
