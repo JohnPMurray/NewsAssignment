@@ -8,12 +8,12 @@ $xmlDoc = new DOMDocument();
 $docPageList = array("World News" => "http://feeds.bbci.co.uk/news/world/rss.xml",
                     "US News" => "http://www.cnbc.com/id/15837362/device/rss/rss.html",
                     "Sports News" => "http://www.espn.com/espn/rss/news" );
-$titles("World News", "US News", "Sports News");
+$titles = array("World News", "US News", "Sports News");
 if ($q != "All"){
     $docPageList = array($q => $docPageList[$q]);
 }
 for ($j=0; $j < sizeof($docPageList); $j++){
-    echo("<h3><b>" . titles[$j] . "</b></h3>");
+    echo("<h3><b>" . $titles[$j] . "</b></h3>");
     $xmlDoc->load($docPageList[titles[$j]]);
     $x=$xmlDoc->getElementsByTagName('item');
     for ($i=0; $i<=10; $i++) {
