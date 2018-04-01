@@ -1,16 +1,14 @@
+
 <?php
 //get the q parameter from URL
 $q=$_GET["q"];
-
 $xmlDoc = new DOMDocument();
 $docPageList = array("World News" => "http://feeds.bbci.co.uk/news/world/rss.xml",
                     "US News" => "http://www.cnbc.com/id/15837362/device/rss/rss.html",
                     "Sports News" => "http://www.espn.com/espn/rss/news" );
-
 if ($q != "All"){
     $docPageList = array($q => $docPageList[$q]);
 }
-
 for ($j=0; $j < sizeof($docPageList); $j++){
     echo("<h3><b>" . array_search($docPageList[$j], $docPageList) . "</b></h3>");
     $xmlDoc->load($docPageList[$j]);
@@ -28,5 +26,4 @@ for ($j=0; $j < sizeof($docPageList); $j++){
         echo ($item_desc . "</p>");
     }
 }
-
 ?>
