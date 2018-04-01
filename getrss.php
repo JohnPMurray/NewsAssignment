@@ -8,7 +8,7 @@ $xmlDoc = new DOMDocument();
 $docPageList = array("World News" => "http://feeds.bbci.co.uk/news/world/rss.xml",
                     "US News" => "http://www.cnbc.com/id/15837362/device/rss/rss.html",
                     "Sports News" => "http://www.espn.com/espn/rss/news" );
-$titles("World News", "US News", "Sports News")
+$titles("World News", "US News", "Sports News");
 if ($q != "All"){
     $docPageList = array($q => $docPageList[$q]);
 }
