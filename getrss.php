@@ -21,7 +21,7 @@ foreach ($docPageList as $key => $value){
         ->item(0)->childNodes->item(0)->nodeValue;
         $item_desc=$x->item($i)->getElementsByTagName('description')
         ->item(0)->childNodes->item(0)->nodeValue;
-        $item_desc=$x->item($i)->getElementsByTagName('pubDate')
+        $pub_date=$x->item($i)->getElementsByTagName('pubDate')
         ->item(0)->childNodes->item(0)->nodeValue;
         echo ("<p><a href='" . $item_link
         . "'>" . $item_title . "</a>");
