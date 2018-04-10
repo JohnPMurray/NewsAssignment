@@ -28,7 +28,7 @@ foreach ($docPageList as $key => $value){
         echo ("<br>");
         echo ($item_desc);
         echo ("<br>");
-        echo("$pub_date </p>")
+        echo("$pub_date </p>");
 
     }
 }
