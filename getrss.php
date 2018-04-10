@@ -11,7 +11,7 @@ if ($q != "All"){
 }
 for ($j=0; $j < sizeof($docPageList); $j++){
     echo("<h3><b>" . $titles[$j] . "</b></h3>");
-    $xmlDoc->load($docPageList[titles[$j]]);
+    $xmlDoc->load("http://www.espn.com/espn/rss/news");
     // $x=$xmlDoc->getElementsByTagName('item');
 //     for ($i=0; $i<=10; $i++) {
 //         $item_title=$x->item($i)->getElementsByTagName('title')
