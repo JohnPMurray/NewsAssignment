@@ -4,14 +4,15 @@ error_reporting(~0);
 //get the q parameter from URL
 $q=$_GET["q"];
 $xmlDoc = new DOMDocument();
-$docPageList = array("Sports News" => "http://www.espn.com/espn/rss/news" );
-$titles = array("Sports News");
+$docPageList = array("NFL" => "http://www.espn.com/espn/rss/nfl/news",
+                     "MLB" => "http://www.espn.com/espn/rss/mlb/news",
+                     "NHL" => "http://www.espn.com/espn/rss/nhl/news"  );
 if ($q != "All"){
     $docPageList = array($q => $docPageList[$q]);
 }
-for ($j=0; $j < sizeof($docPageList); $j++){
-    echo("<h3><b>" . $titles[$j] . "</b></h3>");
-    $xmlDoc->load("http://www.espn.com/espn/rss/news");
+foreach ($docPageList as $key => $value){
+    echo("<h3><b>" . $key . "</b></h3>");
+    $xmlDoc->load($value);
     $x=$xmlDoc->getElementsByTagName('item');
     for ($i=0; $i<=10; $i++) {
         $item_title=$x->item($i)->getElementsByTagName('title')
