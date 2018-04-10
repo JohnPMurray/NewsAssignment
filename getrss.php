@@ -4,10 +4,8 @@ error_reporting(~0);
 //get the q parameter from URL
 $q=$_GET["q"];
 $xmlDoc = new DOMDocument();
-$docPageList = array("World News" => "http://feeds.bbci.co.uk/news/world/rss.xml",
-                    "US News" => "http://www.cnbc.com/id/15837362/device/rss/rss.html",
-                    "Sports News" => "http://www.espn.com/espn/rss/news" );
-$titles = array("World News", "US News", "Sports News");
+$docPageList = array("Sports News" => "http://www.espn.com/espn/rss/news" );
+$titles = array("Sports News");
 if ($q != "All"){
     $docPageList = array($q => $docPageList[$q]);
 }
