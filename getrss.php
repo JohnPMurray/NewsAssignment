@@ -6,9 +6,9 @@ $q=$_GET["q"];
 $xmlDoc = new DOMDocument();
 $docPageList = array("Sports News" => "http://www.espn.com/espn/rss/news" );
 $titles = array("Sports News");
-// if ($q != "All"){
-//     $docPageList = array($q => $docPageList[$q]);
-// }
+if ($q != "All"){
+    $docPageList = array($q => $docPageList[$q]);
+}
 // for ($j=0; $j < sizeof($docPageList); $j++){
 //     echo("<h3><b>" . $titles[$j] . "</b></h3>");
 //     $xmlDoc->load($docPageList[titles[$j]]);
