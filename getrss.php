@@ -1,7 +1,6 @@
-
 <?php
 ini_set('display_errors', 1);
-error_reporting(~0);
+error_reporting(E_ALL);
 //get the q parameter from URL
 $q=$_GET["q"];
 $xmlDoc = new DOMDocument();
