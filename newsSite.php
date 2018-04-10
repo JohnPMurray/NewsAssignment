@@ -35,7 +35,9 @@ error_reporting(~0);
         <form>
             <select onchange="showRSS(this.value)">
             <option value="All">All</option>
-            <option value="Sports News">Sports News</option>
+            <option value="NHL">NHL</option>
+            <option value="NFL">NHL</option>
+            <option value="MLB">NHL</option>
             </select>
         </form>
         <script>showRSS("All")</script>
