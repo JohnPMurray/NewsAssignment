@@ -6,7 +6,7 @@ class article
   public $link;
   public $desc;
   public $pub_date;
-  function __construct($x) {
+  function __construct($x, $i) {
     $this->title = $x->item($i)->getElementsByTagName('title')
       ->item(0)->childNodes->item(0)->nodeValue;
     $this->link=$x->item($i)->getElementsByTagName('link')
@@ -37,7 +37,7 @@ foreach ($docPageList as $key => $value){
     $x=$xmlDoc->getElementsByTagName('item');
     for ($i=0; $i<=10; $i++) {
 
-        $x = new article($x);
+        $x = new article($x, $i);
         echo ("<p><a href='" . $x->link
         . "'>" . $x->title . "</a>");
         echo ("<br>");
