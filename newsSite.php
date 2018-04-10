@@ -35,8 +35,6 @@ error_reporting(~0);
         <form>
             <select onchange="showRSS(this.value)">
             <option value="All">All</option>
-            <option value="World News">World News</option>
-            <option value="US News">US News</option>
             <option value="Sports News">Sports News</option>
             </select>
         </form>
