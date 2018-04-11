@@ -20,6 +20,13 @@ class article
 }
 }
 
+function cmp($a, $b){
+    if ($a->pub_date == $b->pub_date){
+        return 0;
+    }
+    return ($a->pub_date < $b->pub_date) ? -1 : 1;
+}
+
 ini_set('display_errors', 1);
 error_reporting(~0);
 //get the q parameter from URL
@@ -31,6 +38,7 @@ $docPageList = array("NFL" => "http://www.espn.com/espn/rss/nfl/news",
 if ($q != "All"){
     $docPageList = array($q => $docPageList[$q]);
 }
+$articles = array();
 foreach ($docPageList as $key => $value){
     echo("<h3><b>" . $key . "</b></h3>");
     $xmlDoc->load($value);
@@ -38,13 +46,19 @@ foreach ($docPageList as $key => $value){
     for ($i=0; $i<=10; $i++) {
 
         $x = new article($x, $i);
-        echo ("<p><a href='" . $x->link
-        . "'>" . $x->title . "</a>");
-        echo ("<br>");
-        echo ($x->desc);
-        echo ("<br>");
-        echo("$x->pub_date </p>");
+        $articles[] = $x;
 
     }
+}
+
+usort($articles, "cmp");
+
+foreach ($articles as $x){
+    echo ("<p><a href='" . $x->link
+    . "'>" . $x->title . "</a>");
+    echo ("<br>");
+    echo ($x->desc);
+    echo ("<br>");
+    echo("$x->pub_date </p>");
 }
 ?>
