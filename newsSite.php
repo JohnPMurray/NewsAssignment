@@ -44,7 +44,7 @@ error_reporting(~0);
         </script>
         <Title> News World </Title>
         <h1> News World </h1>
-        <h2><i>Printing the news since 2018.</i><h2>
+        <h2><i>Printing the news since 2018.</i></h2>
     </head>
     <body>
         <div><h3>News:</h3></div>
@@ -53,7 +53,7 @@ error_reporting(~0);
             NHL<input type="checkbox" id="nhl" onchange="showRSS()" checked>
             NFL<input type="checkbox" id="nfl" onchange="showRSS()" checked>
         </form>
-        <script>showRSS("All")</script>
+        <script>showRSS()</script>
         <div id="rssOutput">
             ...Loading
         </div>
