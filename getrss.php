@@ -57,7 +57,7 @@ foreach ($articles as $x){
     . "'>" . $x->title . "</a>");
     echo ("<br>");
     echo ($x->desc);
-    echo ("<br></p>");
+    echo ("<br>");
     echo("$x->pub_date </p>");
 }
 ?>
