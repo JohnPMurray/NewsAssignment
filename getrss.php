@@ -59,6 +59,6 @@ foreach ($articles as $x){
     echo ("<br>");
     echo ($x->desc);
     echo ("<br>");
-    echo("$x->pub_date </p>");
+    echo($x->pub_date->format('m-d-Y h:i A') . "</p>");
 }
 ?>
