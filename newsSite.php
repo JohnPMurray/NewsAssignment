@@ -6,7 +6,7 @@ error_reporting(~0);
     <head>
         
         <script>
-            function showRSS(str) {
+            function showRSS() {
             if (str.length==0) { 
                 document.getElementById("rssOutput").innerHTML="";
                 return;
@@ -22,7 +22,26 @@ error_reporting(~0);
                 document.getElementById("rssOutput").innerHTML=this.responseText;
                 }
             }
-            xmlhttp.open("GET","getrss.php?q="+str,true);
+
+            //assemble steing based on current selections
+            var rssString = "getrss.php?"
+            if (document.getElementById("nhl").checked){
+                rssString.concat("nhl=true")
+            } else {
+                rssString.concat("nhl=false")
+            }
+            if (document.getElementById("nfl").checked){
+                rssString.concat("&nfl=true")
+            } else {
+                rssString.concat("&nfl=false")
+            }
+            if (document.getElementById("mlb").checked){
+                rssString.concat("&mlb=true")
+            } else {
+                rssString.concat("&mlb=false")
+            }
+
+            xmlhttp.open("GET",rssString,true);
             xmlhttp.send();
             }
         </script>
@@ -33,12 +52,9 @@ error_reporting(~0);
     <body>
         <div><h3>News:</h3></div>
         <form>
-            <select onchange="showRSS(this.value)">
-            <option value="All">All</option>
-            <option value="NHL">NHL</option>
-            <option value="NFL">NFL</option>
-            <option value="MLB">MLB</option>
-            </select>
+            MLB<input id="checkBox" type="checkbox" id="mlb" onchange="showRSS()">
+            NHL<input id="checkBox" type="checkbox" id="nhl" onchange="showRSS()">
+            NFL<input id="checkBox" type="checkbox" id="nfl" onchange="showRSS()">
         </form>
         <script>showRSS("All")</script>
         <div id="rssOutput">

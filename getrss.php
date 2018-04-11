@@ -31,13 +31,19 @@ date_default_timezone_set('America/New_York');
 ini_set('display_errors', 1);
 error_reporting(~0);
 //get the q parameter from URL
-$q=$_GET["q"];
+$mlb=$_GET["mlb"];
+$nfl=$_GET["nfl"];
+$nhl=$_GET["nhl"];
 $xmlDoc = new DOMDocument();
-$docPageList = array("NFL" => "http://www.espn.com/espn/rss/nfl/news",
-                     "MLB" => "http://www.espn.com/espn/rss/mlb/news",
-                     "NHL" => "http://www.espn.com/espn/rss/nhl/news"  );
-if ($q != "All"){
-    $docPageList = array($q => $docPageList[$q]);
+$docPageList = array();
+if ($mlb == "true"){
+    $docPageList[] = "http://www.espn.com/espn/rss/nfl/news"
+}
+if ($nfl == "true"){
+    $docPageList[] = "http://www.espn.com/espn/rss/mlb/news"
+}
+if ($nhl == "true"){
+    $docPageList[] = "http://www.espn.com/espn/rss/nhl/news"
 }
 $articles = array();
 foreach ($docPageList as $value){
@@ -59,6 +65,6 @@ foreach ($articles as $x){
     echo ("<br>");
     echo ($x->desc);
     echo ("<br>");
-    echo($x->pub_date->format('m/d/Y h:i A') . "</p>");
+    echo($x->pub_date->format('m/d/Y g:i A') . "</p>");
 }
 ?>
