@@ -39,8 +39,7 @@ if ($q != "All"){
     $docPageList = array($q => $docPageList[$q]);
 }
 $articles = array();
-foreach ($docPageList as $key => $value){
-    echo("<h3><b>" . $key . "</b></h3>");
+foreach ($docPageList as $value){
     $xmlDoc->load($value);
     $x=$xmlDoc->getElementsByTagName('item');
     for ($i=0; $i<=10; $i++) {
