@@ -37,7 +37,7 @@ error_reporting(~0);
                 rssString += "&mlb=false";
             }
 
-            document.write(rssString)
+            // document.write(rssString)
             xmlhttp.open("GET", rssString, true);
             xmlhttp.send();
             }
