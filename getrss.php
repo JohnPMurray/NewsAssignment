@@ -27,6 +27,7 @@ function cmp($a, $b){
     return ($a->pub_date < $b->pub_date) ? -1 : 1;
 }
 
+date_default_timezone_set('America/New_York');
 ini_set('display_errors', 1);
 error_reporting(~0);
 //get the q parameter from URL
