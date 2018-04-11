@@ -44,8 +44,8 @@ foreach ($docPageList as $value){
     $x=$xmlDoc->getElementsByTagName('item');
     for ($i=0; $i<=10; $i++) {
 
-        $x = new article($x, $i);
-        $articles[] = $x;
+        $article = new article($x, $i);
+        $articles[] = $article;
 
     }
 }
