@@ -27,8 +27,8 @@ function cmp($a, $b){
     return ($a->pub_date < $b->pub_date) ? -1 : 1;
 }
 
-ini_set('display_errors', 1);
-error_reporting(~0);
+// ini_set('display_errors', 1);
+// error_reporting(~0);
 //get the q parameter from URL
 $q=$_GET["q"];
 $xmlDoc = new DOMDocument();
@@ -56,8 +56,8 @@ foreach ($articles as $x){
     echo ("<p><a href='" . $x->link
     . "'>" . $x->title . "</a>");
     echo ("<br>");
-    //echo ($x->desc);
+    echo ($x->desc);
     echo ("<br></p>");
-    //echo("$x->pub_date </p>");
+    echo("$x->pub_date </p>");
 }
 ?>
