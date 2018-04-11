@@ -13,9 +13,9 @@ class article
         ->item(0)->childNodes->item(0)->nodeValue;
     $this->$desc=$x->item($i)->getElementsByTagName('description')
         ->item(0)->childNodes->item(0)->nodeValue;
-    $pub_date=$x->item($i)->getElementsByTagName('pubDate')
-        ->item(0)->childNodes->item(0)->nodeValue;
-    $this->$pub_date= date_create_from_format('D, j M Y H:i:s T', $pub_date);
+    //$pub_date=$x->item($i)->getElementsByTagName('pubDate')
+    //    ->item(0)->childNodes->item(0)->nodeValue;
+    //$this->$pub_date= date_create_from_format('D, j M Y H:i:s T', $pub_date);
     
 }
 }
@@ -50,14 +50,14 @@ foreach ($docPageList as $value){
     }
 }
 
-usort($articles, "cmp");
+//usort($articles, "cmp");
 
 foreach ($articles as $x){
     echo ("<p><a href='" . $x->link
     . "'>" . $x->title . "</a>");
     echo ("<br>");
     echo ($x->desc);
-    echo ("<br>");
-    echo("$x->pub_date </p>");
+    echo ("<br></p>");
+    //echo("$x->pub_date </p>");
 }
 ?>
