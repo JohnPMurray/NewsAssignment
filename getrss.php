@@ -4,14 +4,14 @@ class article
 {
   public $title;
   public $link;
-  public $desc;
+  public $description;
   public $pub_date;
   function __construct($x, $i) {
     $this->title = $x->item($i)->getElementsByTagName('title')
       ->item(0)->childNodes->item(0)->nodeValue;
     $this->link=$x->item($i)->getElementsByTagName('link')
         ->item(0)->childNodes->item(0)->nodeValue;
-    $this->$desc=$x->item($i)->getElementsByTagName('description')
+    $this->$description=$x->item($i)->getElementsByTagName('description')
         ->item(0)->childNodes->item(0)->nodeValue;
     //$pub_date=$x->item($i)->getElementsByTagName('pubDate')
     //    ->item(0)->childNodes->item(0)->nodeValue;
