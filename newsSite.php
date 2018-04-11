@@ -22,22 +22,23 @@ error_reporting(~0);
             //assemble steing based on current selections
             var rssString = "getrss.php?"
             if (document.getElementById("nhl").checked){
-                rssString.concat("nhl=true")
+                rssString += "nhl=true";
             } else {
-                rssString.concat("nhl=false")
+                rssString += "nhl=false";
             }
             if (document.getElementById("nfl").checked){
-                rssString.concat("&nfl=true")
+                rssString += "&nfl=true";
             } else {
-                rssString.concat("&nfl=false")
+                rssString += "&nfl=false";
             }
             if (document.getElementById("mlb").checked){
-                rssString.concat("&mlb=true")
+                rssString += "&mlb=true";
             } else {
-                rssString.concat("&mlb=false")
+                rssString += "&mlb=false";
             }
 
-            xmlhttp.open("GET",rssString,true);
+            document.write(rssString)
+            xmlhttp.open("GET", rssString, true);
             xmlhttp.send();
             }
         </script>

@@ -30,7 +30,7 @@ function cmp($a, $b){
 date_default_timezone_set('America/New_York');
 ini_set('display_errors', 1);
 error_reporting(~0);
-//get the q parameter from URL
+//get the parameters from URL
 $mlb=$_GET["mlb"];
 $nfl=$_GET["nfl"];
 $nhl=$_GET["nhl"];
