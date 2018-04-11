@@ -24,7 +24,7 @@ function cmp($a, $b){
     if ($a->pub_date == $b->pub_date){
         return 0;
     }
-    return ($a->pub_date < $b->pub_date) ? -1 : 1;
+    return ($a->pub_date > $b->pub_date) ? -1 : 1;
 }
 
 date_default_timezone_set('America/New_York');
@@ -59,6 +59,6 @@ foreach ($articles as $x){
     echo ("<br>");
     echo ($x->desc);
     echo ("<br>");
-    echo($x->pub_date->format('m-d-Y h:i A') . "</p>");
+    echo($x->pub_date->format('m/d/Y h:i A') . "</p>");
 }
 ?>
