@@ -37,10 +37,10 @@ $nhl=$_GET["nhl"];
 $xmlDoc = new DOMDocument();
 $docPageList = array();
 if ($mlb == "true"){
-    $docPageList[] = "http://www.espn.com/espn/rss/nfl/news";
+    $docPageList[] = "http://www.espn.com/espn/rss/mlb/news";
 }
 if ($nfl == "true"){
-    $docPageList[] = "http://www.espn.com/espn/rss/mlb/news";
+    $docPageList[] = "http://www.espn.com/espn/rss/nfl/news";
 }
 if ($nhl == "true"){
     $docPageList[] = "http://www.espn.com/espn/rss/nhl/news";
