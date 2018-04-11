@@ -17,7 +17,7 @@ class article
         ->item(0)->childNodes->item(0)->nodeValue;
     $this->pub_date= date_create_from_format('D, j M Y H:i:s T', $pub_date);
     
-}
+    }
 }
 
 function cmp($a, $b){
@@ -37,13 +37,13 @@ $nhl=$_GET["nhl"];
 $xmlDoc = new DOMDocument();
 $docPageList = array();
 if ($mlb == "true"){
-    $docPageList[] = "http://www.espn.com/espn/rss/nfl/news"
+    $docPageList[] = "http://www.espn.com/espn/rss/nfl/news";
 }
 if ($nfl == "true"){
-    $docPageList[] = "http://www.espn.com/espn/rss/mlb/news"
+    $docPageList[] = "http://www.espn.com/espn/rss/mlb/news";
 }
 if ($nhl == "true"){
-    $docPageList[] = "http://www.espn.com/espn/rss/nhl/news"
+    $docPageList[] = "http://www.espn.com/espn/rss/nhl/news";
 }
 $articles = array();
 foreach ($docPageList as $value){

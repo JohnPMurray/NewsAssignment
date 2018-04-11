@@ -7,10 +7,6 @@ error_reporting(~0);
         
         <script>
             function showRSS() {
-            if (str.length==0) { 
-                document.getElementById("rssOutput").innerHTML="";
-                return;
-            }
             if (window.XMLHttpRequest) {
                 // code for IE7+, Firefox, Chrome, Opera, Safari
                 xmlhttp=new XMLHttpRequest();
