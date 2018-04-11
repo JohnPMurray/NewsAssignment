@@ -49,9 +49,9 @@ error_reporting(~0);
     <body>
         <div><h3>News:</h3></div>
         <form>
-            MLB<input type="checkbox" id="mlb" onchange="showRSS()" default="checked">
-            NHL<input type="checkbox" id="nhl" onchange="showRSS()" default="checked">
-            NFL<input type="checkbox" id="nfl" onchange="showRSS()" default="checked">
+            MLB<input type="checkbox" id="mlb" onchange="showRSS()" checked>
+            NHL<input type="checkbox" id="nhl" onchange="showRSS()" checked>
+            NFL<input type="checkbox" id="nfl" onchange="showRSS()" checked>
         </form>
         <script>showRSS("All")</script>
         <div id="rssOutput">
