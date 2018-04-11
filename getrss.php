@@ -50,7 +50,7 @@ foreach ($docPageList as $value){
     }
 }
 
-//usort($articles, "cmp");
+usort($articles, "cmp");
 
 foreach ($articles as $x){
     echo ("<p><a href='" . $x->link
