@@ -58,7 +58,7 @@ session_start();
                 }
 
                 // document.write(rssString)
-                xmlhttp.open("GET", "getFavorites.php?user=<?php $_SESSION["username"] ?>", true);
+                xmlhttp.open("GET", "getFavorites.php", true);
                 xmlhttp.send();
                 }
         </script>
