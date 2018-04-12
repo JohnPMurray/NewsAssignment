@@ -13,9 +13,7 @@
                 if ($user->username == $username){
                     if($user->password == $password){
                         $_SESSION['username'] = $username;
-                    ?>
-                        <script>window.location.replace('./newsSite.php');</script>
-                    <?php
+                        echo("<script>window.location.replace('./newsSite.php');</script>");
                     } else {
                         $loginMsg = "Invalid Password";
                         break;
