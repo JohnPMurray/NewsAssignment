@@ -51,7 +51,6 @@ session_start();
                 }
                 xmlhttp.onreadystatechange=function() {
                     if (this.readyState==4 && this.status==200) {
-                        document.getElementById("rssOutput").innerHTML=this.responseText;
 
                     }
                 }
@@ -61,7 +60,7 @@ session_start();
 
                 xmlhttp.open("POST", "setFavorites.php?title="+title"&link="+link"&desc="+desc"&date="date, true);
                 xmlhttp.send();
-                            }
+                }
 
 
             function showFavorites() {
