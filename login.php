@@ -6,12 +6,12 @@
         if(isset($_POST["username"]) && isset($_POST["password"])){
             $username = $_POST["username"];
             $password = $_POST["password"];
-
             $json=file_get_contents("./users.json");
             $json_data= json_decode($json,true);
             foreach ($json_data as $user){
-                if ($user->username == $username){
-                    if($user->password == $password){
+                echo($user['username']);
+                if ($user['username'] == $username){
+                    if($user['password'] == $password){
                         $_SESSION['username'] = $username;
                         echo("<script>window.location.replace('./newsSite.php');</script>");
                     } else {
@@ -36,7 +36,7 @@
             <br>
             <?php 
             if ($loginMsg != null){
-                echo("<label id='login-failed'>$loginMsg</label>");
+                echo("<label id='login-failed'>$loginMsg</label><br>");
             }
             ?>
             <button type="submit">Login</button>
