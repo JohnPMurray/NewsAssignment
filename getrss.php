@@ -62,13 +62,13 @@ foreach ($docPageList as $value){
 usort($articles, "cmp");
 
 foreach ($articles as $x){
-    echo ("<div><a id=".str_replace(' ', '', $x->title)." href='" . $x->link
+    echo ("<div><a id=".str_replace(array(' ', '\'', '"'), '', $x->title)." href='" . $x->link
     . "'>" . $x->title . "</a>");
     if ($_SESSION['username'] != ""){
-        echo("<button align='right' onclick=\"favorite('".str_replace(' ', '', $x->title)."')\">Favorite</button>");
+        echo("<button align='right' onclick=\"favorite('".str_replace(array(' ', '\'', '"'), '', $x->title)."')\">Favorite</button>");
     }
     echo("</div>");
-    echo ("<div id='".str_replace(' ', '', $x->title)."-desc'>$x->desc</div>");
-    echo("<div id='".str_replace(' ', '', $x->title)."-date'>" . $x->pub_date->format('m/d/Y g:i A') . "</div><br>");
+    echo ("<div id='".str_replace(array(' ', '\'', '"'), '', $x->title)."-desc'>$x->desc</div>");
+    echo("<div id='".str_replace(array(' ', '\'', '"'), '', $x->title)."-date'>" . $x->pub_date->format('m/d/Y g:i A') . "</div><br>");
 }
 ?>
