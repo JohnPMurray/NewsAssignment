@@ -58,9 +58,9 @@ session_start();
                 desc = document.getElementById(title+"-desc").innerHTML
                 date = document.getElementById(title+"-date").innerHTML
 
-                xmlhttp.open("POST", "setFavorites.php?title="+title"&link="+link"&desc="+desc"&date="date, true);
+                xmlhttp.open("GET", "setFavorites.php?title="+title"&link="+link"&desc="+desc"&date="date, true);
                 xmlhttp.send();
-                }
+            }
 
 
             function showFavorites() {
@@ -101,9 +101,9 @@ session_start();
             NFL<input type="checkbox" id="nfl" onchange="showRSS()" checked>
         </form>
         <?php if ($_SESSION["username"] != ""){
-            echo('<button onclick="showFavorites()">View Favorites</button>');
+            echo("<button onclick=\"showFavorites()\">View Favorites</button>\n");
         }?>
-        <script>showRSS()</script>
+        <script>showRSS();</script>
         <div id="rssOutput">
             ...Loading
         </div>

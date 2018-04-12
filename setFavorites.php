@@ -6,10 +6,10 @@ error_reporting(~0);
 session_start();
 //get the parameters from URL
 $username=$_SESSION['username'];
-$newFavorite=array("title"=>$_POST['title'],
-                   "desc"=>$_POST['desc'],
-                   "link"=>$_POST['link'],
-                   "date"=>$_POST['date']);
+$newFavorite=array("title"=>$_GET['title'],
+                   "desc"=>$_GET['desc'],
+                   "link"=>$_GET['link'],
+                   "date"=>$_GET['date']);
 $json=file_get_contents("./favorites.json");
 $json_data= json_decode($json,true);
 for ($i = 0; $i<sizeof($json_data); $i++){
