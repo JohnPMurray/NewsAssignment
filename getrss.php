@@ -62,9 +62,7 @@ usort($articles, "cmp");
 foreach ($articles as $x){
     echo ("<div id='".str_replace(' ', '', $x->title)."'><a href='" . $x->link
     . "'>" . $x->title . "</a></div>");
-    echo ("<br>");
     echo ("<div id='".str_replace(' ', '', $x->title)."-desc'>$x->desc</div>");
-    echo ("<br>");
     echo("<div id='".str_replace(' ', '', $x->title)."-date'>" . $x->pub_date->format('m/d/Y g:i A') . "</div>");
 }
 ?>

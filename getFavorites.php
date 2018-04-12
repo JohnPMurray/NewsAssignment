@@ -34,7 +34,6 @@ $json=file_get_contents("./favorites.json");
 $json_data= json_decode($json,true);
 $articles = array();
 foreach ($json_data as $user){
-    echo("user: ".$user['user']." expected: $username");
     if ($user['user'] == $username){
         foreach($user['favorites'] as $favorite){
             $articles[] = new jsonarticle($favorite);
@@ -48,9 +47,7 @@ usort($articles, "cmp");
 foreach ($articles as $x){
     echo ("<div id='".str_replace(' ', '', $x->title)."'><a href='" . $x->link
     . "'>" . $x->title . "</a></div>");
-    echo ("<br>");
     echo ("<div id='".str_replace(' ', '', $x->title)."-desc'>$x->desc</div>");
-    echo ("<br>");
     echo("<div id='".str_replace(' ', '', $x->title)."-date'>" . $x->pub_date->format('m/d/Y g:i A') . "</div>");
 }
 ?>

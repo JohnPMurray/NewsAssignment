@@ -63,13 +63,13 @@ session_start();
                 }
         </script>
         <Title> News World </Title>
-        <h1> News World </h1>
+        <div id='nav-bar'><h1> News World </h1> 
+        <div align="right"><a href="login.php" class="button">Login</a>
+        Or 
+        <a href="login.php" class="button">Sign Up</a></div></div>
         <h2><i>Printing the news since 2018.</i></h2>
     </head>
     <body>
-        <a href="login.php" class="button">Login</a>
-        Or
-        <a href="login.php" class="button">Sign Up</a>
         <div><h3>News:</h3></div>
         <form>
             MLB<input type="checkbox" id="mlb" onchange="showRSS()" checked>
