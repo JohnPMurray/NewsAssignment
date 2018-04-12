@@ -31,11 +31,16 @@
         <h1>Login</h1>
     </header>
     <body>
-        <form action="newsSite.php" method="post">
+        <form action="login.php" method="post">
             Username: <input type="text" name="username">
             <br>
             Password: <input type="password" name="password">
             <br>
+            <?php 
+            if ($loginMsg != null){
+                echo("<label id='login-failed'>$loginMsg</label>");
+            }
+            ?>
             <button type="submit">Login</button>
         </form>
     </body>
