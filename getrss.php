@@ -49,7 +49,7 @@ $articles = array();
 foreach ($docPageList as $value){
     $xmlDoc->load($value);
     $x=$xmlDoc->getElementsByTagName('item');
-    for ($i=0; $i<=100; $i++) {
+    for ($i=0; $i<=20; $i++) {
 
         $article = new article($x, $i);
         $articles[] = $article;

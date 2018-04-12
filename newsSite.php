@@ -47,10 +47,9 @@ error_reporting(~0);
         <h2><i>Printing the news since 2018.</i></h2>
     </head>
     <body>
-        <button href="/login.php">Login</button>
+        <button href="login.php">Login</button>
         Or
-        <button href="/login.php">Sign Up</button>
-        ?>
+        <button href="login.php">Sign Up</button>
         <div><h3>News:</h3></div>
         <form>
             MLB<input type="checkbox" id="mlb" onchange="showRSS()" checked>
