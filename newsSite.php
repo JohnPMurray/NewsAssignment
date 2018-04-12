@@ -51,7 +51,7 @@ session_start();
                 }
                 xmlhttp.onreadystatechange=function() {
                     if (this.readyState==4 && this.status==200) {
-
+                        document.getElementById("rssOutput").innerHTML=this.responseText;
                     }
                 }
                 link = document.getElementById(title).href

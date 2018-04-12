@@ -18,7 +18,7 @@ for ($i = 0; $i<sizeof($json_data); $i++){
         break;
     }
 }
-
+echo(json_encode($json_data));
 $my_file = 'favorites.json';
 $handle = fopen($my_file, 'w') or die('Cannot open file:  '.$my_file);
 fwrite($handle, json_encode($json_data));
