@@ -30,6 +30,8 @@ function cmp($a, $b){
 date_default_timezone_set('America/New_York');
 ini_set('display_errors', 1);
 error_reporting(~0);
+session_start();
+
 //get the parameters from URL
 $mlb=$_GET["mlb"];
 $nfl=$_GET["nfl"];
@@ -60,9 +62,13 @@ foreach ($docPageList as $value){
 usort($articles, "cmp");
 
 foreach ($articles as $x){
-    echo ("<div id='".str_replace(' ', '', $x->title)."'><a href='" . $x->link
-    . "'>" . $x->title . "</a></div>");
+    echo ("<div><a id=".$x->title." href='" . $x->link
+    . "'>" . $x->title . "</a>");
+    if ($_SESSION['usersname'] != ""){
+        echo("<button align='right' onclick=\"favorite('".str_replace(' ', '', $x->title)."')\">Favorite</button>");
+    }
+    echo("</div>");
     echo ("<div id='".str_replace(' ', '', $x->title)."-desc'>$x->desc</div>");
-    echo("<div id='".str_replace(' ', '', $x->title)."-date'>" . $x->pub_date->format('m/d/Y g:i A') . "</div>");
+    echo("<div id='".str_replace(' ', '', $x->title)."-date'>" . $x->pub_date->format('m/d/Y g:i A') . "</div><br>");
 }
 ?>

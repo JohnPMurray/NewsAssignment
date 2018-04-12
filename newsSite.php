@@ -20,7 +20,7 @@ session_start();
                     }
                 }
 
-                //assemble steing based on current selections
+                //assemble string based on current selections
                 var rssString = "getrss.php?"
                 if (document.getElementById("nhl").checked){
                     rssString += "nhl=true";
@@ -38,10 +38,31 @@ session_start();
                     rssString += "&mlb=false";
                 }
 
-                // document.write(rssString)
                 xmlhttp.open("GET", rssString, true);
                 xmlhttp.send();
             }
+
+            function favorite(title) {
+                if (window.XMLHttpRequest) {
+                    // code for IE7+, Firefox, Chrome, Opera, Safari
+                    xmlhttp=new XMLHttpRequest();
+                } else {  // code for IE6, IE5
+                    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+                }
+                xmlhttp.onreadystatechange=function() {
+                    if (this.readyState==4 && this.status==200) {
+                        document.getElementById("rssOutput").innerHTML=this.responseText;
+
+                    }
+                }
+                link = document.getElementById(title).href
+                desc = document.getElementById(title+"-desc").innerHTML
+                date = document.getElementById(title+"-date").innerHTML
+
+                xmlhttp.open("POST", "setFavorites.php?title="+title"&link="+link"&desc="+desc"&date="date, true);
+                xmlhttp.send();
+                            }
+
 
             function showFavorites() {
                 if (window.XMLHttpRequest) {
@@ -64,7 +85,7 @@ session_start();
         </script>
         <Title> News World </Title>
         <div id='nav-bar'><h1> News World </h1> 
-        <?php if ($_SESSION["username"] != ""){?>
+        <?php if ($_SESSION["username"] == ""){?>
             <div align="right" display="inline"><a href="login.php" class="button">Login</a>
             Or 
             <a href="login.php" class="button">Sign Up</a></div></div>

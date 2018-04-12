@@ -29,7 +29,6 @@ error_reporting(~0);
 session_start();
 //get the parameters from URL
 $username=$_SESSION['username'];
-$xmlDoc = new DOMDocument();
 $json=file_get_contents("./favorites.json");
 $json_data= json_decode($json,true);
 $articles = array();
