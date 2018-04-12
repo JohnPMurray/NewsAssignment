@@ -52,13 +52,13 @@ session_start();
                 }
                 xmlhttp.onreadystatechange=function() {
                     if (this.readyState==4 && this.status==200) {
-                        var json = JSON.parse(http_request.responseText);
+                        document.getElementById("rssOutput").innerHTML=this.responseText;
 
                     }
                 }
 
                 // document.write(rssString)
-                xmlhttp.open("GET", "favorites.json", true);
+                xmlhttp.open("GET", "getFavorites.php?user=<?php $_SESSION["username"] ?>", true);
                 xmlhttp.send();
                 }
         </script>
@@ -76,7 +76,7 @@ session_start();
             NHL<input type="checkbox" id="nhl" onchange="showRSS()" checked>
             NFL<input type="checkbox" id="nfl" onchange="showRSS()" checked>
         <?php if ($_SESSION["username"] != ""){
-            echo('<input type="button" onclick="showFavorites()">View Favorites</button>');
+            echo('<input type="button" onclick="showFavorites()">View Favorites</input>');
         }?>
         </form>
         <script>showRSS()</script>
