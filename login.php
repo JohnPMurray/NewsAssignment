@@ -2,14 +2,12 @@
 <html>
     <header>
     <?php
+        session_start();
         $loginMsg = null;
         if(isset($_POST["username"]) && isset($_POST["password"])){
             $username = $_POST["username"];
             $password = $_POST["password"];
-            $json=file_get_contents("./users.json");
-            $json_data= json_decode($json,true);
             foreach ($json_data as $user){
-                echo($user['username']);
                 if ($user['username'] == $username){
                     if($user['password'] == $password){
                         $_SESSION['username'] = $username;

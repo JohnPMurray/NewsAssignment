@@ -6,14 +6,14 @@ class article
   public $link;
   public $desc;
   public $pub_date;
-  function __construct($x, $i) {
-    $this->title = $x->item($i)->getElementsByTagName('title')
+  function __construct($x) {
+    $this->title = $x->getElementsByTagName('title')
       ->item(0)->childNodes->item(0)->nodeValue;
-    $this->link=$x->item($i)->getElementsByTagName('link')
+    $this->link=$x->getElementsByTagName('link')
         ->item(0)->childNodes->item(0)->nodeValue;
-    $this->desc=$x->item($i)->getElementsByTagName('description')
+    $this->desc=$x->getElementsByTagName('description')
         ->item(0)->childNodes->item(0)->nodeValue;
-    $pub_date=$x->item($i)->getElementsByTagName('pubDate')
+    $pub_date=$x->getElementsByTagName('pubDate')
         ->item(0)->childNodes->item(0)->nodeValue;
     $this->pub_date= date_create_from_format('D, j M Y H:i:s T', $pub_date);
     
@@ -51,7 +51,7 @@ foreach ($docPageList as $value){
     $x=$xmlDoc->getElementsByTagName('item');
     for ($i=0; $i<=10; $i++) {
 
-        $article = new article($x, $i);
+        $article = new article($x->item($i));
         $articles[] = $article;
 
     }
@@ -60,11 +60,11 @@ foreach ($docPageList as $value){
 usort($articles, "cmp");
 
 foreach ($articles as $x){
-    echo ("<p><a href='" . $x->link
-    . "'>" . $x->title . "</a>");
+    echo ("<div id='".str_replace(' ', '', $x->title)."'><a href='" . $x->link
+    . "'>" . $x->title . "</a></div>");
     echo ("<br>");
-    echo ($x->desc);
+    echo ("<div id='".str_replace(' ', '', $x->title)."-desc'>$x->desc</div>");
     echo ("<br>");
-    echo($x->pub_date->format('m/d/Y g:i A') . "</p>");
+    echo("<div id='".str_replace(' ', '', $x->title)."-date'>" . $x->pub_date->format('m/d/Y g:i A') . "</div>");
 }
 ?>

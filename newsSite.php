@@ -2,45 +2,65 @@
 <?php
 ini_set('display_errors', 1);
 error_reporting(~0);
+session_start();
 ?>
     <head>
         
         <script>
             function showRSS() {
-            if (window.XMLHttpRequest) {
-                // code for IE7+, Firefox, Chrome, Opera, Safari
-                xmlhttp=new XMLHttpRequest();
-            } else {  // code for IE6, IE5
-                xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-            }
-            xmlhttp.onreadystatechange=function() {
-                if (this.readyState==4 && this.status==200) {
-                document.getElementById("rssOutput").innerHTML=this.responseText;
+                if (window.XMLHttpRequest) {
+                    // code for IE7+, Firefox, Chrome, Opera, Safari
+                    xmlhttp=new XMLHttpRequest();
+                } else {  // code for IE6, IE5
+                    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
                 }
+                xmlhttp.onreadystatechange=function() {
+                    if (this.readyState==4 && this.status==200) {
+                    document.getElementById("rssOutput").innerHTML=this.responseText;
+                    }
+                }
+
+                //assemble steing based on current selections
+                var rssString = "getrss.php?"
+                if (document.getElementById("nhl").checked){
+                    rssString += "nhl=true";
+                } else {
+                    rssString += "nhl=false";
+                }
+                if (document.getElementById("nfl").checked){
+                    rssString += "&nfl=true";
+                } else {
+                    rssString += "&nfl=false";
+                }
+                if (document.getElementById("mlb").checked){
+                    rssString += "&mlb=true";
+                } else {
+                    rssString += "&mlb=false";
+                }
+
+                // document.write(rssString)
+                xmlhttp.open("GET", rssString, true);
+                xmlhttp.send();
             }
 
-            //assemble steing based on current selections
-            var rssString = "getrss.php?"
-            if (document.getElementById("nhl").checked){
-                rssString += "nhl=true";
-            } else {
-                rssString += "nhl=false";
-            }
-            if (document.getElementById("nfl").checked){
-                rssString += "&nfl=true";
-            } else {
-                rssString += "&nfl=false";
-            }
-            if (document.getElementById("mlb").checked){
-                rssString += "&mlb=true";
-            } else {
-                rssString += "&mlb=false";
-            }
+            function showFavorites() {
+                if (window.XMLHttpRequest) {
+                    // code for IE7+, Firefox, Chrome, Opera, Safari
+                    xmlhttp=new XMLHttpRequest();
+                } else {  // code for IE6, IE5
+                    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+                }
+                xmlhttp.onreadystatechange=function() {
+                    if (this.readyState==4 && this.status==200) {
+                        var json = JSON.parse(http_request.responseText);
 
-            // document.write(rssString)
-            xmlhttp.open("GET", rssString, true);
-            xmlhttp.send();
-            }
+                    }
+                }
+
+                // document.write(rssString)
+                xmlhttp.open("GET", "favorites.json", true);
+                xmlhttp.send();
+                }
         </script>
         <Title> News World </Title>
         <h1> News World </h1>
@@ -55,6 +75,9 @@ error_reporting(~0);
             MLB<input type="checkbox" id="mlb" onchange="showRSS()" checked>
             NHL<input type="checkbox" id="nhl" onchange="showRSS()" checked>
             NFL<input type="checkbox" id="nfl" onchange="showRSS()" checked>
+        <?php if ($_SESSION["username"] != ""){
+            echo('<input type="button" onclick="showFavorites()">View Favorites</button>');
+        }?>
         </form>
         <script>showRSS()</script>
         <div id="rssOutput">
