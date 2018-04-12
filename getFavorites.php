@@ -27,7 +27,7 @@ date_default_timezone_set('America/New_York');
 ini_set('display_errors', 1);
 error_reporting(~0);
 //get the parameters from URL
-$user=$_GET["user"];
+$username=$_GET["user"];
 $xmlDoc = new DOMDocument();
 $json=file_get_contents("./favorites.json");
 $json_data= json_decode($json,true);
