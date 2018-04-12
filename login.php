@@ -7,6 +7,8 @@
         if(isset($_POST["username"]) && isset($_POST["password"])){
             $username = $_POST["username"];
             $password = $_POST["password"];
+            $json=file_get_contents("./users.json");
+            $json_data= json_decode($json,true);
             foreach ($json_data as $user){
                 if ($user['username'] == $username){
                     if($user['password'] == $password){
