@@ -64,9 +64,13 @@ session_start();
         </script>
         <Title> News World </Title>
         <div id='nav-bar'><h1> News World </h1> 
-        <div align="right"><a href="login.php" class="button">Login</a>
-        Or 
-        <a href="login.php" class="button">Sign Up</a></div></div>
+        <?php if ($_SESSION["username"] != ""){?>
+            <div align="right" display="inline"><a href="login.php" class="button">Login</a>
+            Or 
+            <a href="login.php" class="button">Sign Up</a></div></div>
+        <?php } else { ?>
+            <div align="right" display="inline"><a href="login.php" class="button">Logout</a></div></div>
+        <?php } ?>
         <h2><i>Printing the news since 2018.</i></h2>
     </head>
     <body>
