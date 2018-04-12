@@ -58,7 +58,7 @@ session_start();
                 desc = document.getElementById(title+"-desc").innerHTML
                 date = document.getElementById(title+"-date").innerHTML
 
-                xmlhttp.open("GET", "setFavorites.php?title="+title"&link="+link"&desc="+desc"&date="date, true);
+                xmlhttp.open("GET", "setFavorites.php?title="+title+"&link="+link+"&desc="+desc+"&date="+date, true);
                 xmlhttp.send();
             }
 
