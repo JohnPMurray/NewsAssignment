@@ -75,10 +75,10 @@ session_start();
             MLB<input type="checkbox" id="mlb" onchange="showRSS()" checked>
             NHL<input type="checkbox" id="nhl" onchange="showRSS()" checked>
             NFL<input type="checkbox" id="nfl" onchange="showRSS()" checked>
-        <?php if ($_SESSION["username"] != ""){
-            echo('<input type="button" onclick="showFavorites()">View Favorites</input>');
-        }?>
         </form>
+        <?php if ($_SESSION["username"] != ""){
+            echo('<button onclick="showFavorites()">View Favorites</button>');
+        }?>
         <script>showRSS()</script>
         <div id="rssOutput">
             ...Loading

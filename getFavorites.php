@@ -33,6 +33,7 @@ $json=file_get_contents("./favorites.json");
 $json_data= json_decode($json,true);
 $articles = array();
 foreach ($json_data as $user){
+    echo("user: ".$user['user']." expected: $username");
     if ($user['user'] == $username){
         foreach($user['favorites'] as $favorite){
             $articles[] = new jsonarticle($favorite);
