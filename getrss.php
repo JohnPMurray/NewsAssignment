@@ -64,7 +64,7 @@ usort($articles, "cmp");
 foreach ($articles as $x){
     echo ("<div><a id=".$x->title." href='" . $x->link
     . "'>" . $x->title . "</a>");
-    if ($_SESSION['usersname'] != ""){
+    if ($_SESSION['username'] != ""){
         echo("<button align='right' onclick=\"favorite('".str_replace(' ', '', $x->title)."')\">Favorite</button>");
     }
     echo("</div>");
