@@ -51,7 +51,6 @@ session_start();
                 }
                 xmlhttp.onreadystatechange=function() {
                     if (this.readyState==4 && this.status==200) {
-                        document.getElementById("rssOutput").innerHTML=this.responseText;
                     }
                 }
                 link = document.getElementById(title).href
@@ -81,15 +80,19 @@ session_start();
                 xmlhttp.open("GET", "getFavorites.php", true);
                 xmlhttp.send();
                 }
+
+            function logout() {
+                <?php $_SESSION['username'] = ''; ?>
+            }
         </script>
         <Title> News World </Title>
-        <div id='nav-bar'><h1> News World </h1> 
+        <form id="nav-bar"><h1> News World </h1> 
         <?php if ($_SESSION["username"] == ""){?>
-            <div align="right" display="inline"><a href="login.php" class="button">Login</a>
+            <div align="right" display="inline"><button type="submit" formaction="login.php">Login</button>
             Or 
-            <a href="login.php" class="button">Sign Up</a></div></div>
+            <button type="submit" formaction="login.php">Sign Up</button></div></form>
         <?php } else { ?>
-            <div align="right" display="inline"><a href="login.php" class="button">Logout</a></div></div>
+            <div align="right" display="inline"><button type="submit" onclick="logout()">Logout</a></div></form>
         <?php } ?>
         <h2><i>Printing the news since 2018.</i></h2>
     </head>
