@@ -53,9 +53,11 @@ session_start();
                     if (this.readyState==4 && this.status==200) {
                     }
                 }
+
                 link = document.getElementById(title).href
                 desc = document.getElementById(title+"-desc").innerHTML
                 date = document.getElementById(title+"-date").innerHTML
+                title = document.getElementById(title).innerHTML
 
                 xmlhttp.open("GET", "setFavorites.php?title="+title+"&link="+link+"&desc="+desc+"&date="+date, true);
                 xmlhttp.send();
@@ -92,9 +94,6 @@ session_start();
                     if (this.readyState==4 && this.status==200) {
                     }
                 }
-                link = document.getElementById(title).href
-                desc = document.getElementById(title+"-desc").innerHTML
-                date = document.getElementById(title+"-date").innerHTML
 
                 xmlhttp.open("GET", "logout.php", true);
                 xmlhttp.send();
@@ -107,7 +106,7 @@ session_start();
             Or 
             <button type="submit" formaction="login.php">Sign Up</button></form>
         <?php } else { ?>
-            <button type="submit" onclick="logout()">Logout</button></form>
+            <button onclick="logout()">Logout</button></form>
         <?php } ?>
         <h2><i>Printing the news since 2018.</i></h2>
     </head>
