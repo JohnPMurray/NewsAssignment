@@ -81,16 +81,18 @@ session_start();
                 xmlhttp.send();
                 }
 
+            function logout() {
 
+            }
         </script>
         <Title> News World </Title>
         <form id="nav-bar"><h1> News World </h1> 
         <?php if ($_SESSION["username"] == ""){?>
-            <a align="right" href="login.php">Login</a>
+            <button type="submit" formaction="login.php">Login</button>
             Or 
-            <a align="right" href="login.php">Sign Up</a></form>
+            <button type="submit" formaction="login.php">Sign Up</button></form>
         <?php } else { ?>
-            <a align="right" href="login.php">Logout</a></form>
+            <button type="submit" onclick="logout()">Logout</a></form>
         <?php } ?>
         <h2><i>Printing the news since 2018.</i></h2>
     </head>
