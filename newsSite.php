@@ -82,7 +82,7 @@ session_start();
                 }
 
             function logout() {
-                <?php $_SESSION['username'] = ""; ?>
+
             }
         </script>
         <Title> News World </Title>
