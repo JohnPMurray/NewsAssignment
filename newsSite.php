@@ -82,7 +82,7 @@ session_start();
                 }
 
             function logout() {
-
+                <?php $_SESSION["username"]="";?>
             }
         </script>
         <Title> News World </Title>
@@ -92,7 +92,7 @@ session_start();
             Or 
             <button type="submit" formaction="login.php">Sign Up</button></form>
         <?php } else { ?>
-            <button type="submit" onclick="logout()">Logout</a></form>
+            <button type="submit" onclick="logout()">Logout</button></form>
         <?php } ?>
         <h2><i>Printing the news since 2018.</i></h2>
     </head>
