@@ -2,37 +2,38 @@
 <html>
     <header>
 <?php
-
-date_default_timezone_set('America/New_York');
-ini_set('display_errors', 1);
-error_reporting(~0);
-session_start();
-//get the parameters from URL
-$userExists=False;
-$username=$_POST['username'];
-$password=$_POST['password'];
-$newUser=array("username"=>$username,
-               "password"=>$password,
-               "favorites"=>array());
-$json=file_get_contents("./favorites.json");
-$json_data= json_decode($json,true);
-for ($i = 0; $i<sizeof($json_data); $i++){
-    if ($json_data[$i]['username'] == $username){
-        $userExists = True;
+if(isset($_POST["username"]) && isset($_POST["password"])){
+    date_default_timezone_set('America/New_York');
+    ini_set('display_errors', 1);
+    error_reporting(~0);
+    session_start();
+    //get the parameters from URL
+    $userExists=False;
+    $username=$_POST['username'];
+    $password=$_POST['password'];
+    $newUser=array("username"=>$username,
+                "password"=>$password,
+                "favorites"=>array());
+    $json=file_get_contents("./favorites.json");
+    $json_data= json_decode($json,true);
+    for ($i = 0; $i<sizeof($json_data); $i++){
+        if ($json_data[$i]['username'] == $username){
+            $userExists = True;
+        }
     }
+    if(!$userExists){
+        $json_data[] = $newUser;
+        $_SESSION['username'] = $username;
+        echo("<script>window.location.replace('./newsSite.php');</script>");
+    }
+    else{
+        echo("<script>document.getElementById(title).innerHTML = 'Username already exists.';</script>");
+    }
+    $my_file = 'users.json';
+    $handle = fopen($my_file, 'w') or die('Cannot open file:  '.$my_file);
+    fwrite($handle, json_encode($json_data));
+    fclose($handle);
 }
-if(!$userExists){
-    $json_data[] = $newUser;
-    $_SESSION['username'] = $username;
-    echo("<script>window.location.replace('./newsSite.php');</script>");
-}
-else{
-    echo("<script>document.getElementById(title).innerHTML = 'Username already exists.';</script>");
-}
-$my_file = 'users.json';
-$handle = fopen($my_file, 'w') or die('Cannot open file:  '.$my_file);
-fwrite($handle, json_encode($json_data));
-fclose($handle);
 ?>
 
         <title>News World Sign Up</title>
