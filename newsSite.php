@@ -104,7 +104,7 @@ session_start();
         <?php if ($_SESSION["username"] == ""){?>
             <button type="submit" formaction="login.php">Login</button>
             Or 
-            <button type="submit" formaction="login.php">Sign Up</button></form>
+            <button type="submit" formaction="signup.php">Sign Up</button></form>
         <?php } else { ?>
             <button onclick="logout()">Logout</button></form>
         <?php } ?>
