@@ -14,7 +14,7 @@ if(isset($_POST["username"]) && isset($_POST["password"])){
     $newUser=array("username"=>$username,
                 "password"=>$password,
                 "favorites"=>array());
-    $json=file_get_contents("./favorites.json");
+    $json=file_get_contents("./users.json");
     $json_data= json_decode($json,true);
     for ($i = 0; $i<sizeof($json_data); $i++){
         if ($json_data[$i]['username'] == $username){
