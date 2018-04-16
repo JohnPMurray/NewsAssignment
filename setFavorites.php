@@ -13,13 +13,13 @@ $newFavorite=array("title"=>$_GET['title'],
 $json=file_get_contents("./favorites.json");
 $json_data= json_decode($json,true);
 for ($i = 0; $i<sizeof($json_data); $i++){
-    if ($json_data[$i]['user'] == $username){
+    if ($json_data[$i]['username'] == $username){
         $json_data[$i]['favorites'][] = $newFavorite;
         break;
     }
 }
 echo(json_encode($json_data));
-$my_file = 'favorites.json';
+$my_file = 'users.json';
 $handle = fopen($my_file, 'w') or die('Cannot open file:  '.$my_file);
 fwrite($handle, json_encode($json_data));
 fclose($handle);

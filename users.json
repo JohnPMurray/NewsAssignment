@@ -1,4 +1,4 @@
 [
-    {"username":"Admin", "password":"password"},
-    {"username":"User", "password":"password"}
+    {"username":"Admin", "password":"password", "favorites":[]},
+    {"username":"User", "password":"password", "favorites":[]}
 ]

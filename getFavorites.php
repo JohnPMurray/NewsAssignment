@@ -29,11 +29,11 @@ error_reporting(~0);
 session_start();
 //get the parameters from URL
 $username=$_SESSION['username'];
-$json=file_get_contents("./favorites.json");
+$json=file_get_contents("./users.json");
 $json_data= json_decode($json,true);
 $articles = array();
 foreach ($json_data as $user){
-    if ($user['user'] == $username){
+    if ($user['username'] == $username){
         foreach($user['favorites'] as $favorite){
             $articles[] = new jsonarticle($favorite);
         }
