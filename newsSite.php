@@ -17,6 +17,10 @@ session_start();
                 xmlhttp.onreadystatechange=function() {
                     if (this.readyState==4 && this.status==200) {
                     document.getElementById("rssOutput").innerHTML=this.responseText;
+                    document.getElementById("favorites").onclick = function(){ showFavorites() };
+                    document.getElementById("favorites").innerHTML = "Favorites";
+                    document.getElementById("news-heading").innerHTML = "Recent News:";
+                    document.getElementById("checkboxes").style.visibility="visible";
                     }
                 }
 
@@ -102,6 +106,11 @@ session_start();
                 xmlhttp.onreadystatechange=function() {
                     if (this.readyState==4 && this.status==200) {
                         document.getElementById("rssOutput").innerHTML=this.responseText;
+                        document.getElementById("favorites").onclick = function(){ showRSS() };
+                        document.getElementById("favorites").innerHTML = "Recent News";
+                        document.getElementById("news-heading").innerHTML = "Favorites:";
+                        document.getElementById("checkboxes").style.visibility="hidden";
+
 
                     }
                 }
@@ -139,14 +148,14 @@ session_start();
         <h2><i>Printing the news since 2018.</i></h2>
     </head>
     <body>
-        <div><h3>News:</h3></div>
-        <form>
+        <div><h3 id="news-heading">Recent News:</h3></div>
+        <form id="checkboxes">
             MLB<input type="checkbox" id="mlb" onchange="showRSS()" checked>
             NHL<input type="checkbox" id="nhl" onchange="showRSS()" checked>
             NFL<input type="checkbox" id="nfl" onchange="showRSS()" checked>
         </form>
         <?php if ($_SESSION["username"] != ""){
-            echo("<button onclick=\"showFavorites()\">View Favorites</button>\n");
+            echo("<button id='favorites' onclick=\"showFavorites()\">View Favorites</button>\n");
         }?>
         <script>showRSS();</script>
         <div id="rssOutput">
