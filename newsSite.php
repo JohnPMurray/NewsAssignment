@@ -146,7 +146,7 @@ session_start();
             Or 
             <a href="signup.php"><u>Sign Up</u></a></span></div>
         <?php } else { ?>
-            <span><a onclick="logout()"><u>Logout</u></a></span></form>
+            <span><label onclick="logout()"><u>Logout</u></label></span></form>
         <?php } ?>
         <h2><i>Printing the news since 2018.</i></h2>
     </head>
