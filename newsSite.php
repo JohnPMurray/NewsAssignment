@@ -140,17 +140,20 @@ session_start();
             }
         </script>
         <Title> News World </Title>
-        <div id="nav-bar" class="container-fluid"><span><h1> News World </h1> 
-        <?php if ($_SESSION["username"] == ""){?>
-            <span id='login'><a href="login.php"><u>Login</u></a>
-            Or 
-            <a href="signup.php"><u>Sign Up</u></a></span></div>
-        <?php } else { ?>
-            <span id='login'><a onclick="logout()"><u>Logout</u></a></span></form>
-        <?php } ?>
-        <h2><i>Printing the news since 2018.</i></h2>
     </head>
     <body>
+
+        <div class="row container-fluid" id="nav-bar">
+            <div class="col-md-6"><h1> News World </h1></div> <div class="col-md-6"><span class="pull-right">
+        <?php if ($_SESSION["username"] == ""){?>
+            <a href="login.php"><u>Login</u></a>
+            Or 
+            <a href="signup.php"><u>Sign Up</u></a></span></div></div>
+            
+        <?php } else { ?>
+            <a onclick="logout()"><u>Logout</u></a></span></div></div>
+        <?php } ?>
+        <h2><i>Printing the news since 2018.</i></h2>
         <div><h3 id="news-heading">Recent News:</h3></div>
         <form id="checkboxes">
             MLB<input type="checkbox" id="mlb" onchange="showRSS()" checked>
