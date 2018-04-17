@@ -1,0 +1,5 @@
+#nav-bar > div {
+    background: black;
+    display: inline-block;
+    color: white
+  }

@@ -6,6 +6,7 @@ session_start();
 ?>
     <head>
         
+        <link rel="stylesheet" type="text/css" href="newsStyle.css">
         <script>
             function showRSS() {
                 if (window.XMLHttpRequest) {
@@ -137,11 +138,11 @@ session_start();
             }
         </script>
         <Title> News World </Title>
-        <form id="nav-bar"><h1> News World </h1> 
+        <div id="nav-bar"><h1> News World </h1> 
         <?php if ($_SESSION["username"] == ""){?>
-            <button type="submit" formaction="login.php">Login</button>
+            <a href="login.php">Login</a>
             Or 
-            <button type="submit" formaction="signup.php">Sign Up</button></form>
+            <a href="signup.php">Sign Up</a></div>
         <?php } else { ?>
             <button onclick="logout()">Logout</button></form>
         <?php } ?>
