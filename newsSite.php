@@ -61,12 +61,9 @@ session_start();
                     }
                 }
 
-                link = document.getElementById(title).href
-                desc = document.getElementById(title+"-desc").innerHTML
-                date = document.getElementById(title+"-date").innerHTML
                 verbosetitle = document.getElementById(title).innerHTML
 
-                xmlhttp.open("GET", "unsetFavorites.php?title="+verbosetitle+"&link="+link+"&desc="+desc+"&date="+date, true);
+                xmlhttp.open("GET", "unsetFavorites.php?title="+verbosetitle, true);
                 xmlhttp.send();
             }
             

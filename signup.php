@@ -51,7 +51,7 @@ if(isset($_POST["username"]) && isset($_POST["password"])){
             }
             ?>
             <button type="submit" formaction="newsSite.php">Cancel</button>
-            <button type="submit">Login</button>
+            <button type="submit">Sign Up</button>
         </form>
     </body>
 </html>

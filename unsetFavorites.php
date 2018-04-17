@@ -11,8 +11,10 @@ $json_data= json_decode($json,true);
 for ($i = 0; $i<sizeof($json_data); $i++){
     if ($json_data[$i]['username'] == $username){
         for ($j = 0; $j<sizeof($json_data[$i]['favorites']); $j++){
-            array_splice($json_data[$i]['favorites'], $j, $j);
-            break;
+            if($json_data[$i]['favorites'][$j]['title'] == $_GET['title']){
+                array_splice($json_data[$i]['favorites'], $j, 1);
+                break;
+            }
         }
         break;
     }
