@@ -39,7 +39,7 @@
                 echo("<label id='login-failed'>$loginMsg</label><br>");
             }
             ?>
-            <button type="submit" formaction="newsSite.php">Cancel</button>
+            <button type="button" action="window.location.replace('./newsSite.php')">Cancel</button>
             <button type="submit">Login</button>
         </form>
     </body>
