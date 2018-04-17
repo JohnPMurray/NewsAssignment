@@ -1,5 +1,5 @@
 <?php
-
+include 'newsSite.php'
 class jsonarticle
 {
   public $title;
@@ -44,10 +44,10 @@ foreach ($json_data as $user){
 usort($articles, "cmp");
 
 foreach ($articles as $x){
-    echo ("<div id='".addslashes($x->title)."'><a href='" . $x->link
+    echo ("<div id='".cleanString($x->title)."'><a href='" . $x->link
     . "'>" . $x->title . "</a></div>");
-    echo("<button id='".addslashes($x->title)."-button' onclick=\"unfavoriteAndRefresh('".addslashes($x->title)."')\">Unfavorite</button>");
-    echo ("<div id='".addslashes($x->title)."-desc'>$x->desc</div>");
-    echo("<div id='".addslashes($x->title)."-date'>" . $x->pub_date->format('m/d/Y g:i A') . "</div>");
+    echo("<button id='".cleanString($x->title)."-button' onclick=\"unfavoriteAndRefresh('".cleanString($x->title)."')\">Unfavorite</button>");
+    echo ("<div id='".cleanString($x->title)."-desc'>$x->desc</div>");
+    echo("<div id='".cleanString($x->title)."-date'>" . $x->pub_date->format('m/d/Y g:i A') . "</div>");
 }
 ?>
