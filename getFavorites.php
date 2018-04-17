@@ -1,5 +1,5 @@
 <?php
-include 'newsSite.php';
+include 'sharedFunctions.php';
 class jsonarticle
 {
   public $title;

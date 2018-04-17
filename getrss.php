@@ -1,5 +1,7 @@
 <?php
-include 'newsSite.php';
+
+include 'sharedFunctions.php';
+
 class article
 {
   public $title;
