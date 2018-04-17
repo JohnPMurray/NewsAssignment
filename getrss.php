@@ -77,7 +77,7 @@ foreach ($articles as $x){
             if ($user['username'] == $_SESSION['username']){
                 foreach($user['favorites'] as $favorite){
                     if ($favorite['title'] == $x->title){
-                        echo("<button id='".cleanString($x->title)."-button' onclick=\"unfavorite('".str_replace(array(' ', '\'', '"'), '', $x->title)."')\">Unfavorite</button>");
+                        echo("<button id='".cleanString($x->title)."-button' onclick=\"unfavorite('".cleanString($x->title)."')\">Unfavorite</button>");
                         $fav = True;
                         break;
                     }
