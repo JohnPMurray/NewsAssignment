@@ -42,6 +42,35 @@ session_start();
                 xmlhttp.send();
             }
 
+            function unfavoriteAndRefresh(title){
+                unfavorite(title);
+                showFavorites();
+            }
+            
+            function unfavorite(title){
+                if (window.XMLHttpRequest) {
+                    // code for IE7+, Firefox, Chrome, Opera, Safari
+                    xmlhttp=new XMLHttpRequest();
+                } else {  // code for IE6, IE5
+                    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+                }
+                xmlhttp.onreadystatechange=function() {
+                    if (this.readyState==4 && this.status==200) {
+                        document.getElementById(title+"-button").onclick = function() { favorite(title); }
+                        document.getElementById(title+"-button").innerHTML = "Favorite";
+                    }
+                }
+
+                link = document.getElementById(title).href
+                desc = document.getElementById(title+"-desc").innerHTML
+                date = document.getElementById(title+"-date").innerHTML
+                verbosetitle = document.getElementById(title).innerHTML
+
+                xmlhttp.open("GET", "unsetFavorites.php?title="+verbosetitle+"&link="+link+"&desc="+desc+"&date="+date, true);
+                xmlhttp.send();
+            }
+            
+
             function favorite(title) {
                 if (window.XMLHttpRequest) {
                     // code for IE7+, Firefox, Chrome, Opera, Safari
@@ -51,15 +80,17 @@ session_start();
                 }
                 xmlhttp.onreadystatechange=function() {
                     if (this.readyState==4 && this.status==200) {
+                        document.getElementById(title+"-button").onclick = function() { unfavorite(title); }
+                        document.getElementById(title+"-button").innerHTML = "Unfavorite";
                     }
                 }
 
                 link = document.getElementById(title).href
                 desc = document.getElementById(title+"-desc").innerHTML
                 date = document.getElementById(title+"-date").innerHTML
-                title = document.getElementById(title).innerHTML
+                verbosetitle = document.getElementById(title).innerHTML
 
-                xmlhttp.open("GET", "setFavorites.php?title="+title+"&link="+link+"&desc="+desc+"&date="+date, true);
+                xmlhttp.open("GET", "setFavorites.php?title="+verbosetitle+"&link="+link+"&desc="+desc+"&date="+date, true);
                 xmlhttp.send();
             }
 

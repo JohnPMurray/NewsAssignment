@@ -65,7 +65,7 @@ foreach ($articles as $x){
     echo ("<div><a id=".str_replace(array(' ', '\'', '"'), '', $x->title)." href='" . $x->link
     . "'>" . $x->title . "</a>");
     if ($_SESSION['username'] != ""){
-        echo("<button align='right' onclick=\"favorite('".str_replace(array(' ', '\'', '"'), '', $x->title)."')\">Favorite</button>");
+        echo("<button id='".str_replace(array(' ', '\'', '"'), '', $x->title)."-button' onclick=\"favorite('".str_replace(array(' ', '\'', '"'), '', $x->title)."')\">Favorite</button>");
     }
     echo("</div>");
     echo ("<div id='".str_replace(array(' ', '\'', '"'), '', $x->title)."-desc'>$x->desc</div>");
