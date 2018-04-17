@@ -140,11 +140,11 @@ session_start();
             }
         </script>
         <Title> News World </Title>
-        <span id="nav-bar" class="container-fluid"><h1> News World </h1> 
+        <div id="nav-bar" class="container-fluid"><span><h1> News World </h1></span> 
         <?php if ($_SESSION["username"] == ""){?>
-            <a href="login.php">Login</a>
+            <span><a href="login.php">Login</a>
             Or 
-            <a href="signup.php">Sign Up</a></span>
+            <a href="signup.php">Sign Up</a></div></span>
         <?php } else { ?>
             <button onclick="logout()">Logout</button></form>
         <?php } ?>
