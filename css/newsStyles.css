@@ -5,6 +5,7 @@
 }
 
 #nav-bar h1 { display: inline-block; }
+#nav-bar span { float: right;}
 #nav-bar a:link { color: white; }
 #nav-bar a:visited { color: white; }
 #nav-bar a:hover { color: white; }

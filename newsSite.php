@@ -142,11 +142,11 @@ session_start();
         <Title> News World </Title>
         <div id="nav-bar" class="container-fluid"><span><h1> News World </h1> 
         <?php if ($_SESSION["username"] == ""){?>
-            <a href="login.php">Login</a>
+            <span><a href="login.php"><u>Login</u></a>
             Or 
-            <a href="signup.php">Sign Up</a></div>
+            <a href="signup.php"><u>Sign Up</u></a></span></div>
         <?php } else { ?>
-            <button onclick="logout()">Logout</button></form>
+            <span><a onclick="logout()"><u>Logout</u></a></span></form>
         <?php } ?>
         <h2><i>Printing the news since 2018.</i></h2>
     </head>
