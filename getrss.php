@@ -67,7 +67,7 @@ foreach ($articles as $x){
     if ($_SESSION['username'] != ""){
 
         //check if article is favorited
-        $fav = False
+        $fav = False;
         $json=file_get_contents("./users.json");
         $json_data= json_decode($json,true);
         $articles = array();
