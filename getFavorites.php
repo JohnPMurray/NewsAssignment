@@ -44,7 +44,7 @@ foreach ($json_data as $user){
 usort($articles, "cmp");
 
 foreach ($articles as $x){
-    echo ("<div id='".cleanString($x->title)."'><a href='" . $x->link
+    echo ("<div><a id='".cleanString($x->title)."' href='" . $x->link
     . "'>" . $x->title . "</a></div>");
     echo("<button id='".cleanString($x->title)."-button' onclick=\"unfavoriteAndRefresh('".cleanString($x->title)."')\">Unfavorite</button>");
     echo ("<div id='".cleanString($x->title)."-desc'>$x->desc</div>");

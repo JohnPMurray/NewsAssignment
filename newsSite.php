@@ -44,7 +44,7 @@ session_start();
 
             function unfavoriteAndRefresh(title){
                 unfavorite(title);
-                //showFavorites();
+                showFavorites();
             }
             
             function unfavorite(title){
