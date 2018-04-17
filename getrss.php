@@ -65,7 +65,27 @@ foreach ($articles as $x){
     echo ("<div><a id=".str_replace(array(' ', '\'', '"'), '', $x->title)." href='" . $x->link
     . "'>" . $x->title . "</a>");
     if ($_SESSION['username'] != ""){
-        echo("<button id='".str_replace(array(' ', '\'', '"'), '', $x->title)."-button' onclick=\"favorite('".str_replace(array(' ', '\'', '"'), '', $x->title)."')\">Favorite</button>");
+
+        //check if article is favorited
+        $fav = False
+        $json=file_get_contents("./users.json");
+        $json_data= json_decode($json,true);
+        $articles = array();
+        foreach ($json_data as $user){
+            if ($user['username'] == $_SESSION['username']){
+                foreach($user['favorites'] as $favorite){
+                    if ($favorite['title'] == $x->title){
+                        echo("<button id='".str_replace(array(' ', '\'', '"'), '', $x->title)."-button' onclick=\"unfavorite('".str_replace(array(' ', '\'', '"'), '', $x->title)."')\">Favorite</button>");
+                        $fav = True;
+                        break;
+                    }
+                }    
+                break;
+            }
+        }
+        if ($fav==False){
+            echo("<button id='".str_replace(array(' ', '\'', '"'), '', $x->title)."-button' onclick=\"favorite('".str_replace(array(' ', '\'', '"'), '', $x->title)."')\">Favorite</button>");
+        }
     }
     echo("</div>");
     echo ("<div id='".str_replace(array(' ', '\'', '"'), '', $x->title)."-desc'>$x->desc</div>");
