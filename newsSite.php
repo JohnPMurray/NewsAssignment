@@ -144,12 +144,12 @@ session_start();
     <body>
 
         <div class="row container-fluid" id="nav-bar">
-            <div class="col-md-6"><h1> News World </h1></div> <div class="col-md-6"><span class="pull-right">
+            <div class="col-md-6"><h1> News World </h1></div> <div class="col-md-6"><span class="float-right">
         <?php if ($_SESSION["username"] == ""){?>
             <a href="login.php"><u>Login</u></a>
             Or 
             <a href="signup.php"><u>Sign Up</u></a></span></div></div>
-            
+
         <?php } else { ?>
             <a onclick="logout()"><u>Logout</u></a></span></div></div>
         <?php } ?>
