@@ -6,7 +6,8 @@ session_start();
 ?>
     <head>
         
-        <link rel="stylesheet" type="text/css" href="newsStyle.css">
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <script>
             function showRSS() {
                 if (window.XMLHttpRequest) {
@@ -138,7 +139,7 @@ session_start();
             }
         </script>
         <Title> News World </Title>
-        <div id="nav-bar"><h1> News World </h1> 
+        <div id="nav-bar" class="container-fluid"><h1> News World </h1> 
         <?php if ($_SESSION["username"] == ""){?>
             <a href="login.php">Login</a>
             Or 
