@@ -7,6 +7,7 @@ session_start();
     <head>
         
         <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="newsStyles.css">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <script>
             function showRSS() {
@@ -139,11 +140,11 @@ session_start();
             }
         </script>
         <Title> News World </Title>
-        <div id="nav-bar" class="container-fluid"><h1> News World </h1> 
+        <span id="nav-bar" class="container-fluid"><h1> News World </h1> 
         <?php if ($_SESSION["username"] == ""){?>
             <a href="login.php">Login</a>
             Or 
-            <a href="signup.php">Sign Up</a></div>
+            <a href="signup.php">Sign Up</a></span>
         <?php } else { ?>
             <button onclick="logout()">Logout</button></form>
         <?php } ?>

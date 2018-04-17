@@ -1,0 +1,10 @@
+#nav-bar{
+    background-color: black;
+    color: white;
+
+}
+
+#nav-bar a:link { color: white; }
+#nav-bar a:visited { color: white; }
+#nav-bar a:hover { color: white; }
+#nav-bar a:active { color: white; }
