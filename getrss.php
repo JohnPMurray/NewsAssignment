@@ -62,7 +62,7 @@ foreach ($docPageList as $value){
 usort($articles, "cmp");
 
 foreach ($articles as $x){
-    echo ("<div><a id=".str_replace(array(' ', '\'', '"'), '', $x->title)." href='" . $x->link
+    echo ("<div><a id=".addslashes($x->title)." href='" . $x->link
     . "'>" . $x->title . "</a>");
     if ($_SESSION['username'] != ""){
 
@@ -75,7 +75,7 @@ foreach ($articles as $x){
             if ($user['username'] == $_SESSION['username']){
                 foreach($user['favorites'] as $favorite){
                     if ($favorite['title'] == $x->title){
-                        echo("<button id='".str_replace(array(' ', '\'', '"'), '', $x->title)."-button' onclick=\"unfavorite('".str_replace(array(' ', '\'', '"'), '', $x->title)."')\">Favorite</button>");
+                        echo("<button id='".addslashes($x->title)."-button' onclick=\"unfavorite('".str_replace(array(' ', '\'', '"'), '', $x->title)."')\">Unfavorite</button>");
                         $fav = True;
                         break;
                     }
@@ -84,11 +84,11 @@ foreach ($articles as $x){
             }
         }
         if ($fav==False){
-            echo("<button id='".str_replace(array(' ', '\'', '"'), '', $x->title)."-button' onclick=\"favorite('".str_replace(array(' ', '\'', '"'), '', $x->title)."')\">Favorite</button>");
+            echo("<button id='".addslashes($x->title)."-button' onclick=\"favorite('".addslashes($x->title)."')\">Favorite</button>");
         }
     }
     echo("</div>");
-    echo ("<div id='".str_replace(array(' ', '\'', '"'), '', $x->title)."-desc'>$x->desc</div>");
-    echo("<div id='".str_replace(array(' ', '\'', '"'), '', $x->title)."-date'>" . $x->pub_date->format('m/d/Y g:i A') . "</div><br>");
+    echo ("<div id='".addslashes($x->title)."-desc'>$x->desc</div>");
+    echo("<div id='".addslashes($x->title)."-date'>" . $x->pub_date->format('m/d/Y g:i A') . "</div><br>");
 }
 ?>
