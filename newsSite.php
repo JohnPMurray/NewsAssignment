@@ -148,13 +148,14 @@ session_start();
         <?php if ($_SESSION["username"] == ""){?>
             <a href="login.php"><u>Login</u></a>
             Or 
-            <a href="signup.php"><u>Sign Up</u></a></span></div></div>
+            <a href="signup.php"><u>Sign Up</u></a></span></div>
 
         <?php } else { ?>
-            <a onclick="logout()"><u>Logout</u></a></span></div></div>
+            <a onclick="logout()"><u>Logout</u></a></span></div>
         <?php } ?>
         <h2><i>Printing the news since 2018.</i></h2>
-        <div><h3 id="news-heading">Recent News:</h3></div>
+        </div>
+        <div><h3 id="news-heading">Recent News:</h3>
         <form id="checkboxes">
             <div class="ck-button">
             <label>
@@ -172,6 +173,8 @@ session_start();
             </label>
             </div>
         </form>
+        </div>
+        <br>
         <?php if ($_SESSION["username"] != ""){
             echo("<button id='favorites' onclick=\"showFavorites()\">View Favorites</button>\n");
         }?>
