@@ -86,8 +86,9 @@ foreach ($articles as $x){
         if ($fav==False){
             echo("<div class='col-md-6'><button class='float-right' id='".cleanString($x->title)."-button' onclick=\"favorite('".cleanString($x->title)."')\">Favorite</button></div>");
         }
-        echo("</div>");
+        
     }
+    echo("</div>");
     echo ("<div id='".cleanString($x->title)."-desc'>$x->desc</div>");
     echo("<div id='".cleanString($x->title)."-date'>" . $x->pub_date->format('m/d/Y g:i A') . "</div><br>");
     echo("</div>");
