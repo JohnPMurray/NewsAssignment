@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 <?php
 session_start();
@@ -121,6 +122,16 @@ session_start();
                 xmlhttp.send();
                 }
 
+                if(localStorage){
+                    var lastVisit = localStorage.getItem("last_visit")
+                    var visitText = "Last Visit: " + lastVisit.getMonth() + "/" + lastVisit.getDate() + "/" lastVisit.getYear() + " " + lastVisit.getHours() + ":" + lastVisit.getMinutes()
+                    document.getElementById("last-visit").innerHTML= visitText;
+			        lastVisit = new Date();
+			
+			        // Store data
+                    localStorage.setItem("last_visit", last_visit);
+                }
+
         </script>
         <Title> News World </Title>
     </head>
@@ -138,6 +149,8 @@ session_start();
         <?php } ?>
         <!-- <h2><br><i>Printing the news since 2018.</i></h2> -->
         </div>
+        <br>
+        <h2 id="last-visit" class="float-right"></h2></div>
         <br>
         <div class="row container-fluid"><h3 id="news-heading" class="col">Recent News:</h3>
         <form id="checkboxes" class="col-md-6">
