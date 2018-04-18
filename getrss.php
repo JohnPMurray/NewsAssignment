@@ -75,7 +75,7 @@ foreach ($articles as $x){
             if ($user['username'] == $_SESSION['username']){
                 foreach($user['favorites'] as $favorite){
                     if ($favorite['title'] == $x->title){
-                        echo("<div class='col-md-6'><button class='float-right' id='".cleanString($x->title)."-button' onclick=\"unfavorite('".cleanString($x->title)."')\">Unfavorite</button></div>");
+                        echo("<div class='col-md-6'><button class='btn-primary float-right' id='".cleanString($x->title)."-button' onclick=\"unfavorite('".cleanString($x->title)."')\">Unfavorite</button></div>");
                         $fav = True;
                         break;
                     }
@@ -84,7 +84,7 @@ foreach ($articles as $x){
             }
         }
         if ($fav==False){
-            echo("<div class='col-md-6'><button class='float-right' id='".cleanString($x->title)."-button' onclick=\"favorite('".cleanString($x->title)."')\">Favorite</button></div>");
+            echo("<div class='col-md-6'><button class='btn-primary float-right' id='".cleanString($x->title)."-button' onclick=\"favorite('".cleanString($x->title)."')\">Favorite</button></div>");
         }
         
     }
