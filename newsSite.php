@@ -140,7 +140,7 @@ session_start();
         <!-- <h2><br><i>Printing the news since 2018.</i></h2> -->
         </div>
         <br>
-        <h3 id="last-visit">This is your first visit. Welcome!</h3></div>
+        <label id="last-visit">This is your first visit. Welcome!</label></div>
         <script>
             if(localStorage){
                 var lastVisit = localStorage.getItem("last_visit");
