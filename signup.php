@@ -47,7 +47,7 @@ if(isset($_POST["username"]) && isset($_POST["password"])){
             <h1>Sign Up</h1>
             Username: <input type="text" name="username">
             <br>
-            Password: <input type="password" name="password">
+            Password:  <input type="password" name="password">
             <br>
             <?php 
             if ($loginMsg != null){

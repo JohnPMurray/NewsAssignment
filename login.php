@@ -36,7 +36,7 @@
             <h1>Login</h1>
             Username: <input type="text" name="username">
             <br>
-            Password: <input type="password" name="password">
+            Password:  <input type="password" name="password">
             <br>
             <?php 
             if ($loginMsg != null){
