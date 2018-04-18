@@ -156,8 +156,8 @@ session_start();
         <h2><i>Printing the news since 2018.</i></h2>
         </div>
         <br>
-        <div><h3 id="news-heading">Recent News:</h3>
-        <form id="checkboxes" class="row container">
+        <div class="row container-fluid"><h3 id="news-heading" class="col-md-6">Recent News:</h3>
+        <form id="checkboxes" class="col-lg-2">
             <div class="ck-button">
             <label>
                 <input type="checkbox" checked id="mlb" onchange="showRSS()"><span>MLB</span>
@@ -175,7 +175,7 @@ session_start();
             </div>
         </form>
         <?php if ($_SESSION["username"] != ""){
-            echo("<button id='favorites' onclick=\"showFavorites()\">View Favorites</button>\n");
+            echo("<button id='favorites' class='col-md-6' onclick=\"showFavorites()\">View Favorites</button>\n");
         }?>
         </div>
         <script>showRSS();</script>
