@@ -17,3 +17,7 @@ body{
     background-color: #187AA5;
     border-color: #187AA5;
 }
+
+#login-failed{
+    color: red;
+}

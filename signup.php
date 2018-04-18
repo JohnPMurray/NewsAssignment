@@ -5,10 +5,9 @@
     <link rel="stylesheet" type="text/css" href="css/login.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 <?php
+$loginMsg = null;
 if(isset($_POST["username"]) && isset($_POST["password"])){
     date_default_timezone_set('America/New_York');
-    ini_set('display_errors', 1);
-    error_reporting(~0);
     session_start();
     //get the parameters from URL
     $userExists=False;
@@ -30,7 +29,7 @@ if(isset($_POST["username"]) && isset($_POST["password"])){
         echo("<script>window.location.replace('./newsSite.php');</script>");
     }
     else{
-        echo("<script>document.getElementById(title).innerHTML = 'Username already exists.';</script>");
+        $loginMsg = "User already exists."
     }
     $my_file = 'users.json';
     $handle = fopen($my_file, 'w') or die('Cannot open file:  '.$my_file);
