@@ -140,12 +140,12 @@ session_start();
         <!-- <h2><br><i>Printing the news since 2018.</i></h2> -->
         </div>
         <br>
-        <h3 id="last-visit" class="float-right">This is your first visit. Welcome!</h3></div>
+        <h3 id="last-visit">This is your first visit. Welcome!</h3></div>
         <script>
             if(localStorage){
                 var lastVisit = localStorage.getItem("last_visit");
                 if (lastVisit){
-                var visitText = "Last Visit: " + lastVisit.getMonth() + "/" + lastVisit.getDate() + "/" + lastVisit.getYear() + " " + lastVisit.getHours() + ":" + lastVisit.getMinutes();
+                var visitText = "Last Visit: " + lastVisit//lastVisit.getMonth() + "/" + lastVisit.getDate() + "/" + lastVisit.getYear() + " " + lastVisit.getHours() + ":" + lastVisit.getMinutes();
                 document.getElementById("last-visit").innerHTML= visitText;
                 }
                 lastVisit = new Date();
