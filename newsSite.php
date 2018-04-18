@@ -124,8 +124,13 @@ session_start();
 
                 if(localStorage){
                     var lastVisit = localStorage.getItem("last_visit")
+                    if (lastVisit){
                     var visitText = "Last Visit: " + lastVisit.getMonth() + "/" + lastVisit.getDate() + "/" lastVisit.getYear() + " " + lastVisit.getHours() + ":" + lastVisit.getMinutes()
                     document.getElementById("last-visit").innerHTML= visitText;
+                    }
+                    else{
+                        document.getElementById("last-visit").innerHTML= "This is your first visit. Welcome!"
+                    }
 			        lastVisit = new Date();
 			
 			        // Store data
