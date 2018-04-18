@@ -128,13 +128,12 @@ session_start();
                     var visitText = "Last Visit: " + lastVisit.getMonth() + "/" + lastVisit.getDate() + "/" + lastVisit.getYear() + " " + lastVisit.getHours() + ":" + lastVisit.getMinutes();
                     document.getElementById("last-visit").innerHTML= visitText;
                     }
-                    else{
-                        document.getElementById("last-visit").innerHTML= "This is your first visit. Welcome!"
-                    }
 			        lastVisit = new Date();
 			
 			        // Store data
                     localStorage.setItem("last_visit", last_visit);
+                }else{
+                    document.getElementById("last-visit").innerHTML= "Welcome!"
                 }
 
         </script>
@@ -155,7 +154,7 @@ session_start();
         <!-- <h2><br><i>Printing the news since 2018.</i></h2> -->
         </div>
         <br>
-        <h2 id="last-visit" class="float-right"></h2></div>
+        <h2 id="last-visit" class="float-right"></h2>This is your first visit. Welcome!</div>
         <br>
         <div class="row container-fluid"><h3 id="news-heading" class="col">Recent News:</h3>
         <form id="checkboxes" class="col-md-6">
