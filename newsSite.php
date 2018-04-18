@@ -122,20 +122,6 @@ session_start();
                 xmlhttp.send();
                 }
 
-                if(localStorage){
-                    var lastVisit = localStorage.getItem("last_visit");
-                    if (lastVisit){
-                    var visitText = "Last Visit: " + lastVisit;//+ lastVisit.getMonth() + "/" + lastVisit.getDate() + "/" + lastVisit.getYear() + " " + lastVisit.getHours() + ":" + lastVisit.getMinutes();
-                    document.getElementById("last-visit").innerHTML= visitText;
-                    }
-			        lastVisit = new Date();
-			
-			        // Store data
-                    localStorage.setItem("last_visit", lastVisit);
-                }else{
-                    document.getElementById("last-visit").innerHTML= "Welcome!"
-                }
-
         </script>
         <Title> News World </Title>
     </head>
@@ -155,6 +141,21 @@ session_start();
         </div>
         <br>
         <h2 id="last-visit" class="float-right"></h2>This is your first visit. Welcome!</div>
+        <script>
+            if(localStorage){
+                var lastVisit = localStorage.getItem("last_visit");
+                if (lastVisit){
+                var visitText = "Last Visit: " + lastVisit;//+ lastVisit.getMonth() + "/" + lastVisit.getDate() + "/" + lastVisit.getYear() + " " + lastVisit.getHours() + ":" + lastVisit.getMinutes();
+                document.getElementById("last-visit").innerHTML= visitText;
+                }
+                lastVisit = new Date();
+        
+                // Store data
+                localStorage.setItem("last_visit", lastVisit);
+            }else{
+                document.getElementById("last-visit").innerHTML= "Welcome!"
+            }
+        </script>
         <br>
         <div class="row container-fluid"><h3 id="news-heading" class="col">Recent News:</h3>
         <form id="checkboxes" class="col-md-6">
