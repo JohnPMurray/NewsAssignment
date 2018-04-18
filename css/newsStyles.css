@@ -40,6 +40,7 @@
 .ck-button label input {
     position:absolute;
     top:-20px;
+    visibility: hidden;
 }
 
 .ck-button input:checked + span {
