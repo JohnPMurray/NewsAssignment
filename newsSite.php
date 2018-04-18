@@ -156,7 +156,7 @@ session_start();
         <h2><i>Printing the news since 2018.</i></h2>
         </div>
         <br>
-        <div class="row container-fluid"><h3 id="news-heading" class="col-md-6">Recent News:</h3>
+        <div class="row container-fluid"><h3 id="news-heading" class="col">Recent News:</h3>
         <form id="checkboxes" class="col-6">
             <div class="ck-button">
             <label>
