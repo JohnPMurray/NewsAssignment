@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
     <header>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/newsStyles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 <?php
 if(isset($_POST["username"]) && isset($_POST["password"])){
     date_default_timezone_set('America/New_York');
@@ -37,10 +40,11 @@ if(isset($_POST["username"]) && isset($_POST["password"])){
 ?>
 
         <title>News World Sign Up</title>
-        <h1>Sign Up</h1>
     </header>
     <body>
+        <div class="container">
         <form action="signup.php" method="post">
+            <h1>Sign Up</h1>
             Username: <input type="text" name="username">
             <br>
             Password: <input type="password" name="password">
@@ -53,5 +57,6 @@ if(isset($_POST["username"]) && isset($_POST["password"])){
             <a href="newsSite.php">Cancel</a>
             <button type="submit">Sign Up</button>
         </form>
+        </div>
     </body>
 </html>

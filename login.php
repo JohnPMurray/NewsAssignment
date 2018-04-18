@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
     <header>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <?php
         session_start();
         $loginMsg = null;
@@ -26,10 +28,11 @@
         }
             ?>
         <title>News World Login</title>
-        <h1>Login</h1>
     </header>
     <body>
+        <div class="container">
         <form action="login.php" method="post">
+            <h1>Login</h1>
             Username: <input type="text" name="username">
             <br>
             Password: <input type="password" name="password">
@@ -42,5 +45,6 @@
             <a href="newsSite.php">Cancel</a>
             <button type="submit">Login</button>
         </form>
+        </div>
     </body>
 </html>
