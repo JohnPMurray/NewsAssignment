@@ -151,7 +151,7 @@ session_start();
         <?php } else { ?>
             <a onclick="logout()"><u>Logout</u></a></span></div>
         <?php } ?>
-        <h2><br><i>Printing the news since 2018.</i></h2>
+        <!-- <h2><br><i>Printing the news since 2018.</i></h2> -->
         </div>
         <br>
         <div class="row container-fluid"><h3 id="news-heading" class="col">Recent News:</h3>

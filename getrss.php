@@ -90,8 +90,8 @@ foreach ($articles as $x){
         }
         echo("</div>");
     }
-    echo("</div>");
     echo ("<div id='".cleanString($x->title)."-desc'>$x->desc</div>");
     echo("<div id='".cleanString($x->title)."-date'>" . $x->pub_date->format('m/d/Y g:i A') . "</div><br>");
+    echo("</div>");
 }
 ?>
