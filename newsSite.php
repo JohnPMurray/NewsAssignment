@@ -1,7 +1,5 @@
 <html>
 <?php
-ini_set('display_errors', 1);
-error_reporting(~0);
 session_start();
 ?>
     <head>
@@ -153,6 +151,7 @@ session_start();
         <?php } else { ?>
             <a onclick="logout()"><u>Logout</u></a></span></div>
         <?php } ?>
+        <br>
         <h2><i>Printing the news since 2018.</i></h2>
         </div>
         <br>
@@ -175,7 +174,7 @@ session_start();
             </div>
         </form>
         <?php if ($_SESSION["username"] != ""){
-            echo("<button id='favorites' class='col' onclick=\"showFavorites()\">View Favorites</button>\n");
+            echo("<button id='favorites' class='col-2' onclick=\"showFavorites()\">View Favorites</button>\n");
         }?>
         </div>
         <script>showRSS();</script>

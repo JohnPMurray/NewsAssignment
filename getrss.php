@@ -64,8 +64,8 @@ foreach ($docPageList as $value){
 usort($articles, "cmp");
 
 foreach ($articles as $x){
-    echo ("<div><a id=".cleanString($x->title)." href='" . $x->link
-    . "'>" . $x->title . "</a>");
+    echo ("<div class='article container'><div class='row'><div class='col'><a id=".cleanString($x->title)." href='" . $x->link
+    . "'>" . $x->title . "</a></div>");
     if ($_SESSION['username'] != ""){
 
         //check if article is favorited
@@ -77,7 +77,7 @@ foreach ($articles as $x){
             if ($user['username'] == $_SESSION['username']){
                 foreach($user['favorites'] as $favorite){
                     if ($favorite['title'] == $x->title){
-                        echo("<button id='".cleanString($x->title)."-button' onclick=\"unfavorite('".cleanString($x->title)."')\">Unfavorite</button>");
+                        echo("<div class='col-md-6'><button class='float-right' id='".cleanString($x->title)."-button' onclick=\"unfavorite('".cleanString($x->title)."')\">Unfavorite</button></div>");
                         $fav = True;
                         break;
                     }
@@ -86,8 +86,9 @@ foreach ($articles as $x){
             }
         }
         if ($fav==False){
-            echo("<button id='".cleanString($x->title)."-button' onclick=\"favorite('".cleanString($x->title)."')\">Favorite</button>");
+            echo("<div class='col-md-6'><button class='float-right' id='".cleanString($x->title)."-button' onclick=\"favorite('".cleanString($x->title)."')\">Favorite</button></div>");
         }
+        echo("</div>");
     }
     echo("</div>");
     echo ("<div id='".cleanString($x->title)."-desc'>$x->desc</div>");
