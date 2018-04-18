@@ -45,9 +45,9 @@ if(isset($_POST["username"]) && isset($_POST["password"])){
         <div class="container login-window rounded">
         <form action="signup.php" method="post">
             <h1>Sign Up</h1>
-            <input type="text" placeholder="User Name" name="username">
+            <input type="text" placeholder="Username" name="username">
             <br>
-            <input type="password" placeholder="password" name="password">
+            <input type="password" placeholder="Password" name="password">
             <br>
             <?php 
             if ($loginMsg != null){
@@ -56,7 +56,7 @@ if(isset($_POST["username"]) && isset($_POST["password"])){
             ?>
             <a href="newsSite.php">Cancel</a>
             <br>
-            <button type="submit" class="btn btn-lg btn-primary btn-block">Sign Up</button>
+            <button type="submit" class="btn btn-md btn-primary btn-block">Sign Up</button>
         </form>
         </div>
     </body>
