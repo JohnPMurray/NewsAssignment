@@ -42,7 +42,7 @@ foreach ($json_data as $user){
 usort($articles, "cmp");
 
 foreach ($articles as $x){
-    echo ("<div class='article container rounded'><div class='row'><div class='col'><a class='float-left aticle-title' id=".cleanString($x->title)." href='" . $x->link
+    echo ("<div class='article container rounded'><div class='row'><div class='col'><a style'font-size:20px;' class='float-left aticle-title' id=".cleanString($x->title)." href='" . $x->link
     . "'><u>" . $x->title . "</u></a></div>");
     echo("<div class='col-md-6'><button class='float-right' id='".cleanString($x->title)."-button' onclick=\"unfavoriteAndRefresh('".cleanString($x->title)."')\">Unfavorite</button></div>");
     echo("</div>");
