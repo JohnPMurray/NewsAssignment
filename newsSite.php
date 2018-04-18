@@ -151,12 +151,11 @@ session_start();
         <?php } else { ?>
             <a onclick="logout()"><u>Logout</u></a></span></div>
         <?php } ?>
-        <br>
-        <h2><i>Printing the news since 2018.</i></h2>
+        <h2><br><i>Printing the news since 2018.</i></h2>
         </div>
         <br>
         <div class="row container-fluid"><h3 id="news-heading" class="col">Recent News:</h3>
-        <form id="checkboxes" class="col-6">
+        <form id="checkboxes" class="col-md-6">
             <div class="ck-button">
             <label>
                 <input type="checkbox" checked id="mlb" onchange="showRSS()"><span>MLB</span>
@@ -174,7 +173,7 @@ session_start();
             </div>
         </form>
         <?php if ($_SESSION["username"] != ""){
-            echo("<button id='favorites' class='col-2' onclick=\"showFavorites()\">View Favorites</button>\n");
+            echo("<button id='favorites' class='col-md-2 float right' onclick=\"showFavorites()\">View Favorites</button>\n");
         }?>
         </div>
         <script>showRSS();</script>
