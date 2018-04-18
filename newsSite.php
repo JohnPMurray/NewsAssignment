@@ -157,18 +157,18 @@ session_start();
         </div>
         <br>
         <div><h3 id="news-heading">Recent News:</h3>
-        <form id="checkboxes" class="row">
-            <div class="ck-button col-md-6">
+        <form id="checkboxes" class="row container">
+            <div class="ck-button">
             <label>
                 <input type="checkbox" checked id="mlb" onchange="showRSS()"><span>MLB</span>
             </label>
             </div>
-            <div class="ck-button col-md-6">
+            <div class="ck-button">
             <label>
                 <input type="checkbox" checked id="nhl" onchange="showRSS()"><span>NHL</span>
             </label>
             </div>
-            <div class="ck-button col-md-6">
+            <div class="ck-button">
             <label>
                 <input type="checkbox" checked id="nfl" onchange="showRSS()"><span>NFL</span>
             </label>
