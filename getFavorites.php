@@ -43,7 +43,7 @@ usort($articles, "cmp");
 
 foreach ($articles as $x){
     echo ("<div class='article container rounded'><div class='row'><div class='col'><a style='font-size:20px;' class='float-left aticle-title' id=".cleanString($x->title)." href='" . $x->link
-    . "'><u>" . $x->title . "</u></a></div>");
+    . "'>" . $x->title . "</a></div>");
     echo("<div class='col-md-6'><button class='rounded btn-primary float-right' id='".cleanString($x->title)."-button' onclick=\"unfavoriteAndRefresh('".cleanString($x->title)."')\">Unfavorite</button></div>");
     echo("</div>");
     echo ("<div id='".cleanString($x->title)."-desc'>$x->desc</div>");
