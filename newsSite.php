@@ -121,21 +121,6 @@ session_start();
                 xmlhttp.send();
                 }
 
-            function logout() {
-                if (window.XMLHttpRequest) {
-                    // code for IE7+, Firefox, Chrome, Opera, Safari
-                    xmlhttp=new XMLHttpRequest();
-                } else {  // code for IE6, IE5
-                    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-                }
-                xmlhttp.onreadystatechange=function() {
-                    if (this.readyState==4 && this.status==200) {
-                    }
-                }
-
-                xmlhttp.open("GET", "logout.php", true);
-                xmlhttp.send();
-            }
         </script>
         <Title> News World </Title>
     </head>
@@ -149,7 +134,7 @@ session_start();
             <a href="signup.php"><u>Sign Up</u></a></span></div>
 
         <?php } else { ?>
-            <a onclick="return logout();"><u>Logout</u></a></span></div>
+            <a href="logout.php"><u>Logout</u></a></span></div>
         <?php } ?>
         <!-- <h2><br><i>Printing the news since 2018.</i></h2> -->
         </div>

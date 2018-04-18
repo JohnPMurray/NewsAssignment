@@ -39,7 +39,7 @@
                 echo("<label id='login-failed'>$loginMsg</label><br>");
             }
             ?>
-            <button type="button" action="home()">Cancel</button>
+            <a href="newsSite.php">Cancel</a>
             <button type="submit">Login</button>
         </form>
     </body>
