@@ -158,7 +158,7 @@ session_start();
             </div>
         </form>
         <?php if ($_SESSION["username"] != ""){
-            echo("<button id='favorites' class='btn-primary col-md-2 float right' onclick=\"showFavorites()\">View Favorites</button>\n");
+            echo("<button id='favorites' class='btn-primary rounded col-md-2 float right' onclick=\"showFavorites()\">View Favorites</button>\n");
         }?>
         </div>
         <script>showRSS();</script>
