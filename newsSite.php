@@ -131,7 +131,7 @@ session_start();
 			        lastVisit = new Date();
 			
 			        // Store data
-                    localStorage.setItem("last_visit", last_visit);
+                    localStorage.setItem("last_visit", lastVisit);
                 }else{
                     document.getElementById("last-visit").innerHTML= "Welcome!"
                 }
