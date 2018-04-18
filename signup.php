@@ -29,7 +29,7 @@ if(isset($_POST["username"]) && isset($_POST["password"])){
         echo("<script>window.location.replace('./newsSite.php');</script>");
     }
     else{
-        $loginMsg = "User already exists."
+        $loginMsg = "User already exists.";
     }
     $my_file = 'users.json';
     $handle = fopen($my_file, 'w') or die('Cannot open file:  '.$my_file);
