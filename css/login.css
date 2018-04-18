@@ -7,3 +7,10 @@ body{
     margin-right: auto;
     margin-left: auto;
 }
+
+.login-window h1{
+    background-color: white;
+    margin: auto;
+    text-align: center;
+    width: 50%;
+}
