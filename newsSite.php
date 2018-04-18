@@ -144,7 +144,7 @@ session_start();
     <body>
 
         <div class="row container-fluid" id="nav-bar">
-            <div class="col-md-3"><h1> News World </h1></div> <div class="col-md-6"><span class="float-right">
+            <div class="col"><h1> News World </h1></div> <div class="col-md-6"><span class="float-right">
         <?php if ($_SESSION["username"] == ""){?>
             <a href="login.php"><u>Login</u></a>
             Or 
@@ -157,7 +157,7 @@ session_start();
         </div>
         <br>
         <div class="row container-fluid"><h3 id="news-heading" class="col-md-6">Recent News:</h3>
-        <form id="checkboxes" class="col-lg-6">
+        <form id="checkboxes" class="col-6">
             <div class="ck-button">
             <label>
                 <input type="checkbox" checked id="mlb" onchange="showRSS()"><span>MLB</span>
@@ -175,7 +175,7 @@ session_start();
             </div>
         </form>
         <?php if ($_SESSION["username"] != ""){
-            echo("<button id='favorites' class='col-md-3' onclick=\"showFavorites()\">View Favorites</button>\n");
+            echo("<button id='favorites' class='col' onclick=\"showFavorites()\">View Favorites</button>\n");
         }?>
         </div>
         <script>showRSS();</script>
