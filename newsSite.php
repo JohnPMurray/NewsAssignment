@@ -157,7 +157,7 @@ session_start();
         </div>
         <br>
         <div class="row container-fluid"><h3 id="news-heading" class="col-md-6">Recent News:</h3>
-        <form id="checkboxes" class="col-md-6">
+        <form id="checkboxes" class="col-lg-6">
             <div class="ck-button">
             <label>
                 <input type="checkbox" checked id="mlb" onchange="showRSS()"><span>MLB</span>
