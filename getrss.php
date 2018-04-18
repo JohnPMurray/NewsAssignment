@@ -62,7 +62,7 @@ foreach ($docPageList as $value){
 usort($articles, "cmp");
 
 foreach ($articles as $x){
-    echo ("<div class='article container rounded'><div class='row'><div class='col'><a style'font-size:20px;' class='float-left aticle-title' id=".cleanString($x->title)." href='" . $x->link
+    echo ("<div class='article container rounded'><div class='row'><div class='col'><a style='font-size:20px;' class='float-left aticle-title' id=".cleanString($x->title)." href='" . $x->link
     . "'><u>" . $x->title . "</u></a></div>");
     if ($_SESSION['username'] != ""){
 
