@@ -149,7 +149,7 @@ session_start();
             <a href="signup.php"><u>Sign Up</u></a></span></div>
 
         <?php } else { ?>
-            <label onclick="logout()"><u>Logout</u></label></span></div>
+            <a onclick="return logout();"><u>Logout</u></a></span></div>
         <?php } ?>
         <!-- <h2><br><i>Printing the news since 2018.</i></h2> -->
         </div>
