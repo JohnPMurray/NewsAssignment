@@ -9,6 +9,10 @@
     font-family: Old English Text MT;
             }
 
+#nav-bar h2 { 
+    font-family: Old English Text MT;
+            }
+
 #nav-bar a:link { color: white; }
 #nav-bar a:visited { color: white; }
 #nav-bar a:hover { color: white; }
@@ -30,7 +34,7 @@
 }
 .ck-button label span {
     text-align:center;
-    padding:3px px;
+    padding:3px 0px;
     display:block;
 }
 .ck-button label input {
@@ -40,11 +44,14 @@
 
 .ck-button input:checked + span {
     background-color:rgb(24, 122, 155);
-    padding:3px 3px;
     color:#fff;
 }
 
 #news-heading { 
     display: inline-block; 
     font-family: Old English;
+  }
+
+#checkboxes { 
+    display: inline-block; 
   }

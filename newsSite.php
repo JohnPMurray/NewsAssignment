@@ -155,6 +155,7 @@ session_start();
         <?php } ?>
         <h2><i>Printing the news since 2018.</i></h2>
         </div>
+        <br>
         <div><h3 id="news-heading">Recent News:</h3>
         <form id="checkboxes">
             <div class="ck-button">
@@ -173,11 +174,10 @@ session_start();
             </label>
             </div>
         </form>
-        </div>
-        <br>
         <?php if ($_SESSION["username"] != ""){
             echo("<button id='favorites' onclick=\"showFavorites()\">View Favorites</button>\n");
         }?>
+        </div>
         <script>showRSS();</script>
         <div id="rssOutput">
             ...Loading
