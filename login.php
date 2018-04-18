@@ -2,6 +2,7 @@
 <html>
     <header>
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/login.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?php
         session_start();
@@ -30,7 +31,7 @@
         <title>News World Login</title>
     </header>
     <body>
-        <div class="container">
+        <div class="container login-window rounded">
         <form action="login.php" method="post">
             <h1>Login</h1>
             Username: <input type="text" name="username">

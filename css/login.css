@@ -1,0 +1,9 @@
+body{
+    background-color: lightgray;
+}
+
+.login-window{
+    background-color: white;
+    margin-right: auto;
+    margin-left: auto;
+}
