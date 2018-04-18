@@ -34,9 +34,9 @@
         <div class="container login-window rounded">
         <form action="login.php" method="post">
             <h1>Login</h1>
-            Username: <input type="text" name="username">
+            <input type="text" placeholder="User Name" name="username">
             <br>
-            Password:  <input type="password" name="password">
+            <input type="password" placeholder="password" name="password">
             <br>
             <?php 
             if ($loginMsg != null){
@@ -44,7 +44,8 @@
             }
             ?>
             <a href="newsSite.php">Cancel</a>
-            <button type="submit">Login</button>
+            <br>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
         </form>
         </div>
     </body>
