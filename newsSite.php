@@ -123,9 +123,9 @@ session_start();
                 }
 
                 if(localStorage){
-                    var lastVisit = localStorage.getItem("last_visit")
+                    var lastVisit = localStorage.getItem("last_visit");
                     if (lastVisit){
-                    var visitText = "Last Visit: " + lastVisit.getMonth() + "/" + lastVisit.getDate() + "/" + lastVisit.getYear() + " " + lastVisit.getHours() + ":" + lastVisit.getMinutes();
+                    var visitText = "Last Visit: " + lastVisit//+ lastVisit.getMonth() + "/" + lastVisit.getDate() + "/" + lastVisit.getYear() + " " + lastVisit.getHours() + ":" + lastVisit.getMinutes();
                     document.getElementById("last-visit").innerHTML= visitText;
                     }
 			        lastVisit = new Date();
